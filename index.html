@@ -1460,9 +1460,11 @@
             const max = parseFloat(sld.max);
             const pct = ((val - min) / (max - min)) * 100;
             sld.value = val;
-            sld.style.background = `linear-gradient(to right, var(--primary) ${pct}%, var(--border) ${pct}%)`;
+            sld.style.background = `linear-gradient(to right, var(--primary) 0%, var(--primary) ${pct}%, var(--border) ${pct}%, var(--border) 100%)`;
             updatePage();
         }
+
+        syncAndUpdate();
 
         inp.addEventListener('input', syncAndUpdate);
         sld.addEventListener('input', function() {
@@ -1510,9 +1512,10 @@
                 const max = parseFloat(slider.max);
                 const pct = ((val - min) / (max - min)) * 100;
                 slider.value = val;
-                slider.style.background = `linear-gradient(to right, var(--primary) ${pct}%, var(--border) ${pct}%)`;
+                slider.style.background = `linear-gradient(to right, var(--primary) 0%, var(--primary) ${pct}%, var(--border) ${pct}%, var(--border) 100%)`;
                 updatePage();
             }
+            syncSIP();
             el.addEventListener('input', syncSIP);
             slider.addEventListener('input', function() {
                 el.value = slider.value;
@@ -1533,8 +1536,7 @@
 
     // Crypto address copy
     document.getElementById('cryptoAddress')?.addEventListener('click', copyCryptoAddress);
-}
-        
+}       
         // Check for static params from build script
         if (window.STATIC_PARAMS) {
             const newUrl = window.location.pathname + '?' + window.STATIC_PARAMS;
