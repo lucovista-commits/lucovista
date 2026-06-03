@@ -1,4 +1,4 @@
-// build.js — Generate static HTML for top 200 programmatic pages
+// build.js — Generate static HTML for programmatic pages
 // Run: node build.js (before deploying to Netlify)
 
 const fs = require('fs');
@@ -10,12 +10,12 @@ const template = fs.readFileSync('index.html', 'utf8');
 // Define your top pages
 const pages = [];
 
-// Top 50 banks
+// Top 20 banks
 const banks = ['sbi', 'hdfc', 'icici', 'axis', 'pnb', 'kotak', 'bajaj', 'lic', 
                'yesbank', 'idfcfirst', 'union', 'canara', 'bob', 'federal', 
                'indusind', 'bandhan', 'rbl', 'tata', 'mahindra', 'shriram'];
 
-// Top 20 loan amounts
+// Top 15 loan amounts
 const amounts = [500000, 1000000, 1500000, 2000000, 2500000, 3000000, 
                  4000000, 5000000, 6000000, 7500000, 10000000, 
                  15000000, 20000000, 30000000, 50000000];
@@ -40,7 +40,7 @@ cities.forEach(city => {
     pages.push({ url: `/emi-calculator/city/${city}`, params: `city=${city}` });
 });
 
-// Generate high-value combo pages
+// Generate high-value combo pages (top 10 banks × 5 cities)
 banks.slice(0, 10).forEach(bank => {
     cities.slice(0, 5).forEach(city => {
         pages.push({ url: `/emi-calculator/${bank}-${city}`, params: `bank=${bank}&city=${city}` });
@@ -100,7 +100,7 @@ sitemap += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
 
 pages.forEach(page => {
     sitemap += `  <url>\n`;
-    sitemap += `    <loc>https://lucovista.in${page.url}/</loc>\n`;
+    sitemap += `    <loc>https://lucovista.netlify.app${page.url}/</loc>\n`;
     sitemap += `    <changefreq>weekly</changefreq>\n`;
     sitemap += `    <priority>0.8</priority>\n`;
     sitemap += `  </url>\n`;
@@ -112,13 +112,14 @@ fs.writeFileSync(path.join(outDir, 'sitemap.xml'), sitemap);
 // Generate robots.txt
 const robotsTxt = `User-agent: *
 Allow: /
-Sitemap: https://lucovista.in/sitemap.xml
-
-# Crawl-delay for polite crawling
-Crawl-delay: 2
+Sitemap: https://lucovista.netlify.app/sitemap.xml
 `;
 fs.writeFileSync(path.join(outDir, 'robots.txt'), robotsTxt);
 
+// Create root redirect
+const redirectHtml = '<script>window.location.href="/emi-calculator/bank/sbi/"</script>';
+fs.writeFileSync(path.join(outDir, 'index.html'), redirectHtml);
+
 console.log(`\n✅ Done! Generated ${pages.length} static pages in /dist/`);
 console.log('📊 Deploy the /dist/ folder to Netlify');
-console.log('🔗 Submit sitemap.xml to Google Search Console immediately');
+console.log('🔗 Submit sitemap.xml to Google Search Console');

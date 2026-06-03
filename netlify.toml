@@ -4,15 +4,15 @@
 
 [[redirects]]
   from = "/emi-calculator/*"
-  to = "/emi-calculator/index.html"
+  to = "/emi-calculator/:splat/index.html"
   status = 200
 
 [[redirects]]
   from = "/sip-calculator/*"
-  to = "/sip-calculator/index.html"
+  to = "/sip-calculator/:splat/index.html"
   status = 200
 
 [[redirects]]
   from = "/car-loan/*"
-  to = "/car-loan/index.html"
+  to = "/car-loan/:splat/index.html"
   status = 200

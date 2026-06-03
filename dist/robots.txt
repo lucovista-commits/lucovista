@@ -1,6 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://lucovista.in/sitemap.xml
-
-# Crawl-delay for polite crawling
-Crawl-delay: 2
+Sitemap: https://lucovista.netlify.app/sitemap.xml
