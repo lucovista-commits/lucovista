@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="pageTitle">EMI Calculator - LucoVista | Free Online Loan Calculator India 2025</title>
     <meta name="description" id="metaDescription" content="Calculate your EMI instantly with LucoVista. Free online EMI calculator for home loans, car loans & personal loans. Compare 50+ banks including SBI, HDFC, ICICI. No sign-up required.">
-    <meta name="keywords" content="EMI calculator, loan calculator, home loan EMI, car loan EMI, SIP calculator, LucoVista, India, SBI EMI, HDFC EMI, ICICI EMI">
+    <meta name="keywords" content="EMI calculator, loan calculator, home loan EMI, car loan EMI, SIP calculator, LucoVista, India">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="author" content="LucoVista">
     <meta property="og:title" id="ogTitle" content="EMI Calculator - LucoVista | Free Online Loan Calculator India">
@@ -17,7 +17,6 @@
     <meta name="twitter:title" id="twitterTitle" content="EMI Calculator - LucoVista">
     <meta name="twitter:description" id="twitterDescription" content="Free EMI calculator. Compare 50+ Indian banks instantly.">
     <link rel="canonical" id="canonicalUrl" href="https://lucovista.netlify.app/emi-calculator">
-    
     <script type="application/ld+json" id="faqSchema"></script>
     <script type="application/ld+json" id="productSchema"></script>
     <script type="application/ld+json" id="breadcrumbSchema"></script>
@@ -27,21 +26,14 @@
         "@type": "Organization",
         "name": "LucoVista",
         "url": "https://lucovista.netlify.app",
-        "description": "India's most comprehensive free financial calculator platform. EMI, SIP, and Car Loan calculators with 50+ bank comparisons.",
-        "foundingDate": "2025",
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "contactType": "customer support",
-            "availableLanguage": ["English", "Hindi"]
-        }
+        "description": "India's free financial calculator platform. EMI, SIP, and Car Loan calculators with 50+ bank comparisons.",
+        "foundingDate": "2025"
     }
     </script>
-    
     <style>
         :root {
             --primary: #6c5ce7;
             --primary-dark: #5a4bd1;
-            --primary-light: #a29bfe;
             --accent: #00cec9;
             --gold: #fdcb6e;
             --bg: #f8f9ff;
@@ -51,36 +43,26 @@
             --text-lighter: #b2bec3;
             --border: #dfe6e9;
             --success: #00b894;
-            --danger: #d63031;
-            --warning: #fdcb6e;
             --radius: 20px;
             --radius-sm: 12px;
-            --shadow: 0 2px 8px rgba(108, 92, 231, 0.06), 0 8px 32px rgba(108, 92, 231, 0.04);
-            --shadow-lg: 0 4px 16px rgba(108, 92, 231, 0.08), 0 16px 48px rgba(108, 92, 231, 0.06);
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow: 0 2px 8px rgba(0,0,0,0.04), 0 8px 32px rgba(0,0,0,0.03);
+            --transition: all 0.25s ease;
         }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', 'Noto Sans', sans-serif;
-            background: linear-gradient(135deg, #f8f9ff 0%, #eef0ff 50%, #f8f9ff 100%);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
+            background: #f8f9ff;
             color: var(--text);
             line-height: 1.7;
             min-height: 100vh;
         }
-
         .top-banner-ad {
             width: 100%;
-            background: linear-gradient(135deg, #fff9e6, #fff3cd);
-            border-bottom: 2px solid var(--gold);
-            padding: 10px 20px;
+            background: #fff9e6;
+            border-bottom: 1px solid var(--gold);
+            padding: 8px 20px;
             text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            backdrop-filter: blur(10px);
-            min-height: 70px;
+            min-height: 68px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -93,15 +75,13 @@
             color: #b8860b;
             margin-bottom: 2px;
         }
-
         .nav-bar {
             background: var(--card);
             border-bottom: 1px solid var(--border);
-            padding: 14px 24px;
+            padding: 12px 20px;
             position: sticky;
-            top: 70px;
+            top: 0;
             z-index: 999;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
         }
         .nav-container {
             max-width: 1200px;
@@ -110,99 +90,63 @@
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 8px;
         }
         .logo {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 800;
             background: linear-gradient(135deg, var(--primary), var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            letter-spacing: -0.5px;
             text-decoration: none;
         }
-        .logo-icon { font-size: 28px; margin-right: 4px; }
         .nav-links { display: flex; gap: 6px; flex-wrap: wrap; }
         .nav-link {
-            padding: 7px 14px;
-            border-radius: 25px;
+            padding: 6px 14px;
+            border-radius: 20px;
             text-decoration: none;
             color: var(--text);
             font-weight: 500;
             font-size: 13px;
             transition: var(--transition);
             background: var(--bg);
-            white-space: nowrap;
         }
-        .nav-link:hover, .nav-link.active {
-            background: var(--primary);
-            color: white;
-        }
-
+        .nav-link:hover, .nav-link.active { background: var(--primary); color: white; }
         .main-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 24px 20px;
+            padding: 20px;
             display: grid;
             grid-template-columns: 1fr 300px;
-            gap: 24px;
+            gap: 20px;
         }
-        @media (max-width: 900px) {
-            .main-container { grid-template-columns: 1fr; }
-            .nav-bar { top: 70px; }
-        }
-
-        .content-area { display: flex; flex-direction: column; gap: 20px; }
-
+        @media (max-width: 900px) { .main-container { grid-template-columns: 1fr; } }
+        .content-area { display: flex; flex-direction: column; gap: 18px; }
         .breadcrumb { font-size: 13px; color: var(--text-light); }
         .breadcrumb a { color: var(--primary); text-decoration: none; }
-        .breadcrumb a:hover { text-decoration: underline; }
-
-        h1 {
-            font-size: 30px;
-            font-weight: 800;
-            color: var(--text);
-            letter-spacing: -0.5px;
-            line-height: 1.3;
-        }
-        .subtitle { font-size: 15px; color: var(--text-light); margin-top: 4px; }
-
+        h1 { font-size: 28px; font-weight: 800; letter-spacing: -0.5px; line-height: 1.3; }
+        .subtitle { font-size: 15px; color: var(--text-light); }
         .answer-box {
-            background: linear-gradient(135deg, #f0f0ff, #e8e8ff);
+            background: #f0f0ff;
             border-left: 4px solid var(--primary);
-            padding: 14px 18px;
+            padding: 12px 16px;
             border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
             font-size: 14px;
-            line-height: 1.6;
         }
         .answer-box strong { color: var(--primary); }
-
         .calculator-card {
             background: var(--card);
             border-radius: var(--radius);
-            padding: 28px;
+            padding: 24px;
             box-shadow: var(--shadow);
             border: 1px solid var(--border);
         }
-        .calc-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        .calc-header h2 { font-size: 20px; font-weight: 700; }
-        .calc-type-toggle {
-            display: flex;
-            gap: 4px;
-            background: var(--bg);
-            border-radius: 25px;
-            padding: 4px;
-        }
+        .calc-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; flex-wrap: wrap; gap: 8px; }
+        .calc-header h2 { font-size: 19px; font-weight: 700; }
+        .calc-type-toggle { display: flex; gap: 4px; background: var(--bg); border-radius: 25px; padding: 3px; }
         .calc-type-btn {
-            padding: 7px 16px;
+            padding: 6px 16px;
             border-radius: 22px;
             border: none;
             cursor: pointer;
@@ -212,22 +156,9 @@
             background: transparent;
             color: var(--text-light);
         }
-        .calc-type-btn.active {
-            background: var(--primary);
-            color: white;
-            box-shadow: 0 4px 12px rgba(108, 92, 231, 0.3);
-        }
-
-        .input-group { margin-bottom: 18px; }
-        .input-group label {
-            display: block;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 5px;
-            color: var(--text);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
+        .calc-type-btn.active { background: var(--primary); color: white; }
+        .input-group { margin-bottom: 16px; }
+        .input-group label { display: block; font-size: 12px; font-weight: 600; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.3px; }
         .input-row { display: flex; gap: 10px; align-items: center; }
         .input-row input, .input-row select {
             flex: 1;
@@ -240,18 +171,8 @@
             background: #fafbfc;
             font-family: inherit;
         }
-        .input-row input:focus, .input-row select:focus {
-            outline: none;
-            border-color: var(--primary);
-            background: #fff;
-            box-shadow: 0 0 0 4px rgba(108, 92, 231, 0.1);
-        }
-        .input-row span {
-            font-weight: 600;
-            color: var(--text-light);
-            min-width: 40px;
-            font-size: 14px;
-        }
+        .input-row input:focus, .input-row select:focus { outline: none; border-color: var(--primary); background: #fff; }
+        .input-row span { font-weight: 600; color: var(--text-light); min-width: 40px; font-size: 14px; }
         input[type="range"] {
             width: 100%;
             height: 6px;
@@ -271,7 +192,7 @@
             border-radius: 50%;
             cursor: pointer;
             border: 3px solid #fff;
-            box-shadow: 0 3px 10px rgba(108, 92, 231, 0.3);
+            box-shadow: 0 2px 8px rgba(108,92,231,0.3);
         }
         input[type="range"]::-moz-range-thumb {
             width: 22px;
@@ -280,195 +201,82 @@
             border-radius: 50%;
             cursor: pointer;
             border: 3px solid #fff;
-            box-shadow: 0 3px 10px rgba(108, 92, 231, 0.3);
         }
-        .slider-labels {
-            display: flex;
-            justify-content: space-between;
-            font-size: 10px;
-            color: var(--text-lighter);
-            margin-top: 2px;
-        }
-
+        .slider-labels { display: flex; justify-content: space-between; font-size: 10px; color: var(--text-lighter); margin-top: 2px; }
         .result-box {
-            background: linear-gradient(135deg, #6c5ce7, #5a4bd1, #4a3db5);
+            background: linear-gradient(135deg, #6c5ce7, #5a4bd1);
             border-radius: var(--radius);
-            padding: 28px;
+            padding: 26px;
             color: white;
             text-align: center;
             margin-top: 8px;
-            box-shadow: 0 12px 40px rgba(108, 92, 231, 0.3);
         }
-        .result-emi {
-            font-size: 42px;
-            font-weight: 800;
-            letter-spacing: -1px;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.2);
-        }
-        .result-label { font-size: 13px; opacity: 0.9; margin-top: 2px; }
-        .result-details {
-            display: flex;
-            gap: 16px;
-            margin-top: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .detail-item {
-            background: rgba(255,255,255,0.13);
-            padding: 14px 20px;
-            border-radius: var(--radius-sm);
-            min-width: 120px;
-            backdrop-filter: blur(10px);
-        }
-        .detail-value { font-size: 20px; font-weight: 700; }
+        .result-emi { font-size: 40px; font-weight: 800; letter-spacing: -1px; }
+        .result-label { font-size: 13px; opacity: 0.9; }
+        .result-details { display: flex; gap: 14px; margin-top: 18px; justify-content: center; flex-wrap: wrap; }
+        .detail-item { background: rgba(255,255,255,0.14); padding: 12px 18px; border-radius: var(--radius-sm); min-width: 110px; }
+        .detail-value { font-size: 19px; font-weight: 700; }
         .detail-label { font-size: 11px; opacity: 0.8; }
-
-        .amortization-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 16px;
-            font-size: 13px;
-        }
-        .amortization-table th {
-            background: var(--bg);
-            padding: 10px;
-            text-align: left;
-            font-weight: 600;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            color: var(--text-light);
-        }
+        .amortization-table { width: 100%; border-collapse: collapse; margin-top: 14px; font-size: 13px; }
+        .amortization-table th { background: var(--bg); padding: 10px; text-align: left; font-weight: 600; font-size: 11px; text-transform: uppercase; color: var(--text-light); }
         .amortization-table td { padding: 8px 10px; border-bottom: 1px solid var(--border); }
-        .amortization-table tbody tr:hover { background: #f8f9ff; }
-        .table-scroll {
-            max-height: 280px;
-            overflow-y: auto;
-            border-radius: var(--radius-sm);
-            border: 1px solid var(--border);
-        }
-
-        .faq-section {
+        .table-scroll { max-height: 260px; overflow-y: auto; border-radius: var(--radius-sm); border: 1px solid var(--border); }
+        .faq-section, .related-section {
             background: var(--card);
             border-radius: var(--radius);
-            padding: 28px;
+            padding: 24px;
             box-shadow: var(--shadow);
             border: 1px solid var(--border);
         }
-        .faq-section h2 { font-size: 22px; margin-bottom: 16px; }
-        .faq-item { border-bottom: 1px solid var(--border); padding: 14px 0; }
+        .faq-section h2, .related-section h2 { font-size: 20px; margin-bottom: 14px; }
+        .faq-item { border-bottom: 1px solid var(--border); padding: 12px 0; }
         .faq-item:last-child { border-bottom: none; }
-        .faq-question {
-            font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            user-select: none;
-            font-size: 15px;
-        }
-        .faq-answer {
-            margin-top: 8px;
-            color: var(--text-light);
-            font-size: 14px;
-            display: none;
-            line-height: 1.7;
-        }
+        .faq-question { font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 15px; user-select: none; }
+        .faq-answer { margin-top: 8px; color: var(--text-light); font-size: 14px; display: none; }
         .faq-item.open .faq-answer { display: block; }
-        .faq-question::after {
-            content: '+';
-            font-size: 20px;
-            color: var(--primary);
-            font-weight: 300;
-            transition: var(--transition);
-        }
+        .faq-question::after { content: '+'; font-size: 20px; color: var(--primary); }
         .faq-item.open .faq-question::after { content: '−'; }
-
-        .related-section {
-            background: var(--card);
-            border-radius: var(--radius);
-            padding: 28px;
-            box-shadow: var(--shadow);
-            border: 1px solid var(--border);
-        }
-        .related-section h2 { font-size: 18px; margin-bottom: 14px; }
-        .related-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-            gap: 8px;
-        }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; }
         .related-link {
             background: #f8f9ff;
-            padding: 9px 14px;
-            border-radius: 25px;
+            padding: 8px 12px;
+            border-radius: 20px;
             font-size: 12px;
             color: var(--primary);
             text-decoration: none;
             font-weight: 500;
             transition: var(--transition);
             text-align: center;
-            border: 1px solid transparent;
         }
-        .related-link:hover {
-            background: var(--primary);
-            color: white;
-            border-color: var(--primary);
-        }
-
-        .sidebar { display: flex; flex-direction: column; gap: 20px; }
-        @media (max-width: 900px) {
-            .sidebar { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-        }
-        @media (max-width: 600px) {
-            .sidebar { grid-template-columns: 1fr; }
-        }
-
+        .related-link:hover { background: var(--primary); color: white; }
+        .sidebar { display: flex; flex-direction: column; gap: 18px; }
+        @media (max-width: 900px) { .sidebar { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; } }
+        @media (max-width: 600px) { .sidebar { grid-template-columns: 1fr; } }
         .sidebar-ad {
             background: var(--card);
             border-radius: var(--radius);
-            padding: 16px;
+            padding: 14px;
             border: 1px solid var(--border);
             text-align: center;
-            box-shadow: var(--shadow);
             min-height: 260px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
         }
-        .sidebar-ad .ad-label {
-            font-size: 8px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--text-lighter);
-            margin-bottom: 6px;
-        }
-
+        .sidebar-ad .ad-label { font-size: 8px; text-transform: uppercase; letter-spacing: 2px; color: var(--text-lighter); margin-bottom: 6px; }
         .donation-box {
             background: linear-gradient(135deg, #2d3436, #1a1a2e);
             border-radius: var(--radius);
-            padding: 24px 20px;
+            padding: 22px 18px;
             color: white;
             text-align: center;
-            box-shadow: var(--shadow-lg);
             border: 2px solid var(--gold);
             position: relative;
             overflow: hidden;
         }
-        .donation-box::before {
-            content: '';
-            position: absolute;
-            top: -30px;
-            right: -30px;
-            width: 80px;
-            height: 80px;
-            background: var(--gold);
-            border-radius: 50%;
-            opacity: 0.12;
-        }
-        .donation-box .donation-icon { font-size: 36px; margin-bottom: 10px; }
         .donation-box h3 {
-            font-size: 18px;
+            font-size: 17px;
             font-weight: 700;
             margin-bottom: 6px;
             background: linear-gradient(135deg, var(--gold), #f39c12);
@@ -476,139 +284,63 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        .donation-box .donation-message {
-            font-size: 13px;
-            color: #b2bec3;
-            margin-bottom: 14px;
-            line-height: 1.6;
-        }
+        .donation-box .donation-message { font-size: 12px; color: #b2bec3; margin-bottom: 12px; }
         .donation-box .donation-address {
             background: rgba(255,255,255,0.08);
             border-radius: var(--radius-sm);
-            padding: 12px;
+            padding: 10px;
             font-size: 10px;
             word-break: break-all;
             margin-bottom: 10px;
             border: 1px solid rgba(255,255,255,0.12);
-            font-family: 'SF Mono', 'Fira Code', monospace;
+            font-family: monospace;
             cursor: pointer;
-            transition: var(--transition);
-        }
-        .donation-box .donation-address:hover {
-            background: rgba(255,255,255,0.14);
-            border-color: var(--gold);
         }
         .donation-box .copy-btn {
             background: var(--gold);
             color: #1a1a2e;
             border: none;
-            padding: 7px 18px;
-            border-radius: 20px;
+            padding: 6px 16px;
+            border-radius: 18px;
             font-weight: 700;
             cursor: pointer;
             font-size: 12px;
-            transition: var(--transition);
         }
-        .donation-box .copy-btn:hover {
-            background: #f0b800;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(253, 203, 110, 0.4);
-        }
-        .donation-box .social-proof {
-            font-size: 11px;
-            color: #636e72;
-            margin-top: 10px;
-            font-style: italic;
-        }
-        .donation-options {
-            display: flex;
-            gap: 6px;
-            margin-bottom: 10px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
+        .donation-box .copy-btn:hover { background: #f0b800; }
+        .donation-options { display: flex; gap: 6px; margin-bottom: 10px; justify-content: center; flex-wrap: wrap; }
         .donation-option {
             background: rgba(255,255,255,0.08);
             border: 1px solid rgba(255,255,255,0.15);
             color: white;
-            padding: 5px 12px;
-            border-radius: 18px;
+            padding: 5px 10px;
+            border-radius: 16px;
             cursor: pointer;
             font-size: 11px;
             font-weight: 600;
-            transition: var(--transition);
         }
-        .donation-option:hover, .donation-option.selected {
-            background: var(--gold);
-            color: #1a1a2e;
-            border-color: var(--gold);
-        }
-
-        .mid-ad-section {
+        .donation-option.selected { background: var(--gold); color: #1a1a2e; border-color: var(--gold); }
+        .mid-ad-section, .bottom-ad-section {
             background: var(--card);
             border-radius: var(--radius);
-            padding: 16px;
+            padding: 14px;
             text-align: center;
             border: 1px solid var(--border);
-            min-height: 70px;
+            min-height: 80px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
         }
-        .mid-ad-section .ad-label {
-            font-size: 8px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--text-lighter);
-            margin-bottom: 4px;
-        }
-
-        .bottom-ad-section {
-            background: var(--card);
-            border-radius: var(--radius);
-            padding: 16px;
-            text-align: center;
-            border: 1px solid var(--border);
-            min-height: 100px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        .bottom-ad-section .ad-label {
-            font-size: 8px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--text-lighter);
-            margin-bottom: 4px;
-        }
-
-        .footer {
-            text-align: center;
-            padding: 24px 20px;
-            color: var(--text-light);
-            font-size: 12px;
-            border-top: 1px solid var(--border);
-            margin-top: 30px;
-            background: var(--card);
-        }
-        .footer a { color: var(--primary); text-decoration: none; }
-
+        .mid-ad-section .ad-label, .bottom-ad-section .ad-label { font-size: 8px; text-transform: uppercase; letter-spacing: 2px; color: var(--text-lighter); margin-bottom: 4px; }
+        .footer { text-align: center; padding: 20px; color: var(--text-light); font-size: 12px; border-top: 1px solid var(--border); margin-top: 30px; background: var(--card); }
         .toast {
-            position: fixed;
-            bottom: 30px;
-            left: 50%;
+            position: fixed; bottom: 30px; left: 50%;
             transform: translateX(-50%) translateY(100px);
-            background: #2d3436;
-            color: white;
-            padding: 12px 24px;
-            border-radius: 30px;
-            font-size: 14px;
-            font-weight: 600;
+            background: #2d3436; color: white;
+            padding: 12px 24px; border-radius: 30px;
+            font-size: 14px; font-weight: 600;
             z-index: 9999;
-            transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
         }
         .toast.show { transform: translateX(-50%) translateY(0); }
         .toast.success { background: var(--success); }
@@ -622,986 +354,541 @@
     </script></head>
 <body>
 
-    <!-- TOP BANNER AD - Adsterra 468x60 -->
-    <div class="top-banner-ad">
-        <div class="ad-label">📢 Sponsored</div>
-        <script>
-            atOptions = {
-                'key' : '7d1cab36687f7cee3e7955b77a6f432e',
-                'format' : 'iframe',
-                'height' : 60,
-                'width' : 468,
-                'params' : {}
-            };
-        </script>
-        <script src="https://www.highperformanceformat.com/7d1cab36687f7cee3e7955b77a6f432e/invoke.js"></script>
-    </div>
-
-    <!-- NAVIGATION -->
-    <nav class="nav-bar">
-        <div class="nav-container">
-            <a href="/" class="logo">
-                <span class="logo-icon">🔮</span>LucoVista
-            </a>
-            <div class="nav-links">
-                <a href="/emi-calculator/bank/sbi/" class="nav-link active" id="navEmi">EMI Calculator</a>
-                <a href="/sip-calculator/" class="nav-link" id="navSip">SIP Calculator</a>
-                <a href="/emi-calculator/bank/sbi/" class="nav-link">SBI EMI</a>
-                <a href="/emi-calculator/bank/hdfc/" class="nav-link">HDFC EMI</a>
-                <a href="/emi-calculator/amount/5000000/" class="nav-link">₹50L EMI</a>
-                <a href="/car-loan/maruti-swift/" class="nav-link" id="navCar">Car Loan</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- MAIN CONTENT -->
-    <div class="main-container">
-        
-        <div class="content-area">
-            
-            <div class="breadcrumb">
-                <a href="/">🏠 Home</a> › <span id="breadcrumbText">EMI Calculator</span>
-            </div>
-
-            <h1 id="pageHeading">EMI Calculator India — Free Online Loan EMI Calculator 2025</h1>
-            <p class="subtitle" id="pageSubtitle">Calculate your monthly EMI instantly. Compare 50+ Indian banks. Free, no sign-up required.</p>
-
-            <div class="answer-box" id="answerBox">
-                <strong>⚡ Quick Answer:</strong> Use LucoVista's free EMI calculator to find your exact monthly payment. 
-                Enter your loan amount, interest rate, and tenure. We support 50+ Indian banks with real-time rate comparisons.
-            </div>
-
-            <!-- CALCULATOR CARD -->
-            <div class="calculator-card" id="calculatorCard">
-                <div class="calc-header">
-                    <h2 id="calcTitle">📊 EMI Calculator</h2>
-                    <div class="calc-type-toggle" id="calcTypeToggle">
-                        <button class="calc-type-btn active" data-type="emi">EMI</button>
-                        <button class="calc-type-btn" data-type="sip">SIP</button>
-                    </div>
-                </div>
-
-                <div id="emiCalculator">
-                    <div class="input-group">
-                        <label>💰 Loan Amount</label>
-                        <div class="input-row">
-                            <input type="number" id="loanAmount" value="2000000" min="50000" max="50000000" step="100000">
-                            <span>INR</span>
-                        </div>
-                        <input type="range" id="amountSlider" min="50000" max="50000000" step="50000" value="2000000">
-                        <div class="slider-labels"><span>₹50K</span><span>₹5Cr</span></div>
-                    </div>
-
-                    <div class="input-group">
-                        <label>📈 Interest Rate (% per annum)</label>
-                        <div class="input-row">
-                            <input type="number" id="interestRate" value="8.5" min="5" max="30" step="0.1">
-                            <span>%</span>
-                        </div>
-                        <input type="range" id="rateSlider" min="5" max="30" step="0.1" value="8.5">
-                        <div class="slider-labels"><span>5%</span><span>30%</span></div>
-                    </div>
-
-                    <div class="input-group">
-                        <label>⏳ Loan Tenure</label>
-                        <div class="input-row">
-                            <input type="number" id="loanTenure" value="20" min="1" max="40" step="1">
-                            <span>Years</span>
-                        </div>
-                        <input type="range" id="tenureSlider" min="1" max="40" step="1" value="20">
-                        <div class="slider-labels"><span>1 Year</span><span>40 Years</span></div>
-                    </div>
-
-                    <div class="input-group" id="bankSelectGroup">
-                        <label>🏦 Select Bank (for accurate rates)</label>
-                        <div class="input-row">
-                            <select id="bankSelect">
-                                <option value="">-- All Banks (Default 8.5%) --</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="sipCalculator" style="display:none;">
-                    <div class="input-group">
-                        <label>💰 Monthly Investment</label>
-                        <div class="input-row">
-                            <input type="number" id="sipAmount" value="5000" min="500" max="500000" step="500">
-                            <span>INR</span>
-                        </div>
-                        <input type="range" id="sipAmountSlider" min="500" max="500000" step="500" value="5000">
-                        <div class="slider-labels"><span>₹500</span><span>₹5L</span></div>
-                    </div>
-                    <div class="input-group">
-                        <label>📈 Expected Return Rate (% per annum)</label>
-                        <div class="input-row">
-                            <input type="number" id="sipRate" value="12" min="1" max="40" step="0.1">
-                            <span>%</span>
-                        </div>
-                        <input type="range" id="sipRateSlider" min="1" max="40" step="0.1" value="12">
-                        <div class="slider-labels"><span>1%</span><span>40%</span></div>
-                    </div>
-                    <div class="input-group">
-                        <label>⏳ Investment Period</label>
-                        <div class="input-row">
-                            <input type="number" id="sipYears" value="10" min="1" max="40" step="1">
-                            <span>Years</span>
-                        </div>
-                        <input type="range" id="sipYearsSlider" min="1" max="40" step="1" value="10">
-                        <div class="slider-labels"><span>1 Year</span><span>40 Years</span></div>
-                    </div>
-                </div>
-
-                <div id="carCalculator" style="display:none;">
-                    <div class="input-group">
-                        <label>🚗 Select Car Model</label>
-                        <div class="input-row">
-                            <select id="carModelSelect">
-                                <option value="">-- Choose Car Model --</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="input-group">
-                        <label>💰 Car Price (On-Road)</label>
-                        <div class="input-row">
-                            <input type="number" id="carPrice" value="800000" min="300000" max="50000000" step="10000">
-                            <span>INR</span>
-                        </div>
-                    </div>
-                    <div class="input-group">
-                        <label>💵 Down Payment</label>
-                        <div class="input-row">
-                            <input type="number" id="carDownPayment" value="200000" min="0" max="50000000" step="10000">
-                            <span>INR</span>
-                        </div>
-                    </div>
-                    <div class="input-group">
-                        <label>📈 Interest Rate (% per annum)</label>
-                        <div class="input-row">
-                            <input type="number" id="carRate" value="9.5" min="5" max="20" step="0.1">
-                            <span>%</span>
-                        </div>
-                    </div>
-                    <div class="input-group">
-                        <label>⏳ Loan Tenure</label>
-                        <div class="input-row">
-                            <input type="number" id="carTenure" value="5" min="1" max="7" step="1">
-                            <span>Years</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- RESULT BOX -->
-                <div class="result-box" id="resultBox">
-                    <div class="result-emi" id="mainResult">₹17,361</div>
-                    <div class="result-label" id="mainResultLabel">Monthly EMI</div>
-                    <div class="result-details" id="resultDetails">
-                        <div class="detail-item">
-                            <div class="detail-value" id="detail1">₹21,66,640</div>
-                            <div class="detail-label">Total Interest</div>
-                        </div>
-                        <div class="detail-item">
-                            <div class="detail-value" id="detail2">₹41,66,640</div>
-                            <div class="detail-label">Total Payment</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="table-scroll" id="amortizationTable" style="margin-top:16px;">
-                    <table class="amortization-table">
-                        <thead>
-                            <tr><th>Year</th><th>Principal Paid</th><th>Interest Paid</th><th>Balance</th></tr>
-                        </thead>
-                        <tbody id="amortBody"></tbody>
-                    </table>
-                </div>
-            </div>
-
-            <!-- MID-CONTENT AD - Adsterra 728x90 -->
-            <div class="mid-ad-section">
-                <div class="ad-label">📢 Sponsored</div>
-                <script>
-                    atOptions = {
-                        'key' : 'cd14f922c3a33721536edf70251d9469',
-                        'format' : 'iframe',
-                        'height' : 90,
-                        'width' : 728,
-                        'params' : {}
-                    };
-                </script>
-                <script src="https://www.highperformanceformat.com/cd14f922c3a33721536edf70251d9469/invoke.js"></script>
-            </div>
-
-            <!-- FAQ SECTION -->
-            <div class="faq-section" id="faqSection">
-                <h2>❓ Frequently Asked Questions</h2>
-                <div id="faqContainer">
-                    <div class="faq-item open">
-                        <div class="faq-question">How is EMI calculated?</div>
-                        <div class="faq-answer">EMI = P × r × (1+r)^n / ((1+r)^n - 1), where P = principal, r = monthly interest rate, n = total months. Our calculator does this instantly for you.</div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question" id="faqBankQ">What are current home loan interest rates in India?</div>
-                        <div class="faq-answer" id="faqBankA">Home loan rates in India range from 8.35% to 10.50% p.a. depending on the bank, your credit score (CIBIL), and loan amount. SBI offers rates from 8.50%, HDFC from 8.60%.</div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">Can prepayment reduce my EMI?</div>
-                        <div class="faq-answer">Yes! Partial prepayment reduces your outstanding principal, which lowers either your EMI or tenure. Most banks allow it with minimal charges. RBI mandates no prepayment penalty on floating rate loans.</div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">Is LucoVista really free?</div>
-                        <div class="faq-answer">100% free! No sign-up, no hidden fees. We're supported by ads and generous donors. Use all calculators unlimited times. ❤️</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- RELATED CALCULATORS -->
-            <div class="related-section">
-                <h2>🔗 Related Calculators & Pages</h2>
-                <div class="related-grid" id="relatedLinksGrid"></div>
-            </div>
-
-            <!-- BOTTOM AD - Adsterra Native -->
-            <div class="bottom-ad-section">
-                <div class="ad-label">📢 Sponsored</div>
-                <script src="https://pl29630601.effectivecpmnetwork.com/7a/65/55/7a6555d88749b6adb1ff2e3b5e871613.js"></script>
-            </div>
-        </div>
-
-        <!-- SIDEBAR -->
-        <aside class="sidebar">
-            
-            <!-- SIDEBAR AD 1 - Adsterra 320x50 -->
-            <div class="sidebar-ad">
-                <div class="ad-label">📢 Sponsored</div>
-                <script>
-                    atOptions = {
-                        'key' : '7a911d3b54966c6db8d90558dd9f9701',
-                        'format' : 'iframe',
-                        'height' : 50,
-                        'width' : 320,
-                        'params' : {}
-                    };
-                </script>
-                <script src="https://www.highperformanceformat.com/7a911d3b54966c6db8d90558dd9f9701/invoke.js"></script>
-            </div>
-
-            <!-- DONATION BOX -->
-            <div class="donation-box" id="donationBox">
-                <div class="donation-icon">💜</div>
-                <h3>Support LucoVista</h3>
-                <p class="donation-message">
-                    We're 100% free and ad-supported. If we've helped you save money, consider supporting us! ☕
-                </p>
-                <div class="donation-options">
-                    <button class="donation-option" data-amount="5">☕ $5</button>
-                    <button class="donation-option selected" data-amount="10">🍕 $10</button>
-                    <button class="donation-option" data-amount="25">🎁 $25</button>
-                    <button class="donation-option" data-amount="0">💝 Any</button>
-                </div>
-                <p style="font-size:10px;color:#b2bec3;margin-bottom:6px;">Uniswap Wallet (ETH/USDC/USDT):</p>
-                <div class="donation-address" id="cryptoAddress" title="Click to copy">
-                    0x0Fa2C761De5309A3Dc1a6D0d38D8f17c28995993
-                </div>
-                <button class="copy-btn" onclick="copyCryptoAddress()">📋 Copy Address</button>
-                <p class="social-proof" id="donationSocialProof">
-                    💜 Join 250+ supporters who keep LucoVista running!
-                </p>
-                <p style="font-size:9px;color:#636e72;margin-top:6px;">
-                    ETH • USDC • USDT • Uniswap Wallet • Trust Wallet • MetaMask
-                </p>
-            </div>
-
-            <!-- SIDEBAR AD 2 - Adsterra 160x600 -->
-            <div class="sidebar-ad">
-                <div class="ad-label">📢 Sponsored</div>
-                <script>
-                    atOptions = {
-                        'key' : '6ccbc85d21aae35103f7f07831ba4073',
-                        'format' : 'iframe',
-                        'height' : 600,
-                        'width' : 160,
-                        'params' : {}
-                    };
-                </script>
-                <script src="https://www.highperformanceformat.com/6ccbc85d21aae35103f7f07831ba4073/invoke.js"></script>
-            </div>
-
-            <!-- SIDEBAR AD 3 - Adsterra 160x300 -->
-            <div class="sidebar-ad">
-                <div class="ad-label">📢 Sponsored</div>
-                <script>
-                    atOptions = {
-                        'key' : 'b731ec333568ab53dee669cc11ee0bc5',
-                        'format' : 'iframe',
-                        'height' : 300,
-                        'width' : 160,
-                        'params' : {}
-                    };
-                </script>
-                <script src="https://www.highperformanceformat.com/b731ec333568ab53dee669cc11ee0bc5/invoke.js"></script>
-            </div>
-
-            <!-- SIDEBAR AD 4 - Adsterra 300x250 -->
-            <div class="sidebar-ad">
-                <div class="ad-label">📢 Sponsored</div>
-                <script>
-                    atOptions = {
-                        'key' : 'baa58f2a53c279a68afb75a6833ee595',
-                        'format' : 'iframe',
-                        'height' : 250,
-                        'width' : 300,
-                        'params' : {}
-                    };
-                </script>
-                <script src="https://www.highperformanceformat.com/baa58f2a53c279a68afb75a6833ee595/invoke.js"></script>
-            </div>
-
-            <!-- QUICK BANK LINKS -->
-            <div class="related-section" style="padding:18px;">
-                <h3 style="font-size:15px;margin-bottom:10px;">🏦 Top Bank EMI Calculators</h3>
-                <div class="related-grid" style="grid-template-columns:1fr;" id="sidebarBankLinks"></div>
-            </div>
-        </aside>
-    </div>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-        <p>© 2025 <strong>LucoVista</strong> — India's Smartest Free Financial Calculator Platform</p>
-        <p style="margin-top:4px;font-size:11px;">
-            📧 support@lucovista.in | 
-            Privacy Policy | 
-            Terms of Use | 
-            Made with 💜 in India
-        </p>
-    </footer>
-
-    <!-- TOAST -->
-    <div class="toast" id="toast">✅ Address copied! Thank you for supporting LucoVista 💜</div>
-
+<div class="top-banner-ad">
+    <div class="ad-label">📢 Sponsored</div>
     <script>
-        // ============================================
-        // DATA: 50+ BANKS, CITIES, CAR MODELS
-        // ============================================
-
-        const banks = {
-            sbi: { name: 'SBI', full: 'State Bank of India', rate: 8.50, type: 'PSU' },
-            hdfc: { name: 'HDFC', full: 'HDFC Bank', rate: 8.60, type: 'Private' },
-            icici: { name: 'ICICI', full: 'ICICI Bank', rate: 8.65, type: 'Private' },
-            axis: { name: 'Axis', full: 'Axis Bank', rate: 8.55, type: 'Private' },
-            pnb: { name: 'PNB', full: 'Punjab National Bank', rate: 8.40, type: 'PSU' },
-            bob: { name: 'BoB', full: 'Bank of Baroda', rate: 8.45, type: 'PSU' },
-            canara: { name: 'Canara', full: 'Canara Bank', rate: 8.50, type: 'PSU' },
-            kotak: { name: 'Kotak', full: 'Kotak Mahindra Bank', rate: 8.70, type: 'Private' },
-            bajaj: { name: 'Bajaj Finserv', full: 'Bajaj Finserv', rate: 8.75, type: 'NBFC' },
-            lic: { name: 'LIC HFL', full: 'LIC Housing Finance', rate: 8.50, type: 'NBFC' },
-            union: { name: 'Union Bank', full: 'Union Bank of India', rate: 8.45, type: 'PSU' },
-            yesbank: { name: 'YES Bank', full: 'YES Bank', rate: 8.70, type: 'Private' },
-            indusind: { name: 'IndusInd', full: 'IndusInd Bank', rate: 8.75, type: 'Private' },
-            bandhan: { name: 'Bandhan', full: 'Bandhan Bank', rate: 8.60, type: 'Private' },
-            rbl: { name: 'RBL', full: 'RBL Bank', rate: 8.90, type: 'Private' },
-            idfcfirst: { name: 'IDFC First', full: 'IDFC First Bank', rate: 8.65, type: 'Private' },
-            federal: { name: 'Federal Bank', full: 'Federal Bank', rate: 8.75, type: 'Private' },
-            tata: { name: 'Tata Capital', full: 'Tata Capital', rate: 8.50, type: 'NBFC' },
-            mahindra: { name: 'Mahindra Fin', full: 'Mahindra Finance', rate: 8.95, type: 'NBFC' },
-            shriram: { name: 'Shriram Fin', full: 'Shriram Finance', rate: 9.00, type: 'NBFC' }
-        };
-
-        const cities = ['Mumbai', 'Delhi', 'Bangalore', 'Chennai', 'Hyderabad', 'Pune', 'Kolkata', 'Ahmedabad', 
-                       'Jaipur', 'Lucknow', 'Indore', 'Chandigarh', 'Surat', 'Nagpur', 'Kochi'];
-
-        const carModels = {
-            'maruti-swift': { name: 'Maruti Swift', price: 750000, brand: 'Maruti Suzuki' },
-            'maruti-baleno': { name: 'Maruti Baleno', price: 900000, brand: 'Maruti Suzuki' },
-            'hyundai-creta': { name: 'Hyundai Creta', price: 1500000, brand: 'Hyundai' },
-            'hyundai-venue': { name: 'Hyundai Venue', price: 1050000, brand: 'Hyundai' },
-            'tata-nexon': { name: 'Tata Nexon', price: 1200000, brand: 'Tata Motors' },
-            'tata-punch': { name: 'Tata Punch', price: 750000, brand: 'Tata Motors' },
-            'mahindra-thar': { name: 'Mahindra Thar', price: 1500000, brand: 'Mahindra' },
-            'mahindra-xuv700': { name: 'Mahindra XUV700', price: 1800000, brand: 'Mahindra' },
-            'kia-seltos': { name: 'Kia Seltos', price: 1450000, brand: 'Kia' },
-            'toyota-fortuner': { name: 'Toyota Fortuner', price: 3800000, brand: 'Toyota' },
-            'honda-city': { name: 'Honda City', price: 1400000, brand: 'Honda' }
-        };
-
-        // ============================================
-        // UTILITY FUNCTIONS
-        // ============================================
-
-        function formatIndianNumber(num) {
-            if (num >= 10000000) return '₹' + (num / 10000000).toFixed(num % 10000000 === 0 ? 0 : 1) + ' Crore';
-            if (num >= 100000) return '₹' + (num / 100000).toFixed(num % 100000 === 0 ? 0 : 1) + ' Lakh';
-            return '₹' + num.toLocaleString('en-IN');
-        }
-
-        function formatCurrency(num) {
-            return '₹' + Math.round(num).toLocaleString('en-IN');
-        }
-
-        function getParams() {
-            const urlPath = window.location.pathname;
-            const queryParams = new URLSearchParams(window.location.search);
-            
-            let params = {
-                calculator: queryParams.get('calculator') || 'emi',
-                bank: queryParams.get('bank') || '',
-                amount: parseInt(queryParams.get('amount')) || 0,
-                city: queryParams.get('city') || '',
-                rate: parseFloat(queryParams.get('rate')) || 0,
-                tenure: parseInt(queryParams.get('tenure')) || 0,
-                car: queryParams.get('car') || ''
-            };
-
-            const pathParts = urlPath.replace(/\/$/, '').split('/').filter(p => p);
-            
-            if (pathParts.includes('sip-calculator')) params.calculator = 'sip';
-            if (pathParts.includes('car-loan')) {
-                params.calculator = 'car';
-                const carIndex = pathParts.indexOf('car-loan') + 1;
-                if (pathParts[carIndex]) params.car = pathParts[carIndex];
-            }
-            if (pathParts.includes('bank')) {
-                const bankIndex = pathParts.indexOf('bank') + 1;
-                if (pathParts[bankIndex]) params.bank = pathParts[bankIndex];
-            }
-            if (pathParts.includes('city')) {
-                const cityIndex = pathParts.indexOf('city') + 1;
-                if (pathParts[cityIndex]) params.city = pathParts[cityIndex];
-            }
-            if (pathParts.includes('amount')) {
-                const amtIndex = pathParts.indexOf('amount') + 1;
-                if (pathParts[amtIndex]) params.amount = parseInt(pathParts[amtIndex]);
-            }
-
-            return params;
-        }
-
-        function calculateEMI(principal, annualRate, years) {
-            const monthlyRate = annualRate / 12 / 100;
-            const months = years * 12;
-            if (monthlyRate === 0) return { emi: principal / months, totalInterest: 0, totalPayment: principal };
-            const emi = principal * monthlyRate * Math.pow(1 + monthlyRate, months) / (Math.pow(1 + monthlyRate, months) - 1);
-            const totalPayment = emi * months;
-            return { emi, totalInterest: totalPayment - principal, totalPayment };
-        }
-
-        function calculateSIP(monthlyAmount, annualRate, years) {
-            const monthlyRate = annualRate / 12 / 100;
-            const months = years * 12;
-            const futureValue = monthlyAmount * ((Math.pow(1 + monthlyRate, months) - 1) / monthlyRate) * (1 + monthlyRate);
-            const totalInvested = monthlyAmount * months;
-            return { futureValue, totalInvested, wealthGain: futureValue - totalInvested };
-        }
-
-        function generateAmortization(principal, annualRate, years) {
-            const monthlyRate = annualRate / 12 / 100;
-            const months = years * 12;
-            const emi = principal * monthlyRate * Math.pow(1 + monthlyRate, months) / (Math.pow(1 + monthlyRate, months) - 1);
-            let balance = principal;
-            let yearlyData = [];
-            const maxYears = Math.min(years, 5);
-            for (let year = 1; year <= maxYears; year++) {
-                let yearlyPrincipal = 0, yearlyInterest = 0;
-                for (let m = 0; m < 12; m++) {
-                    const interest = balance * monthlyRate;
-                    const principalPaid = emi - interest;
-                    yearlyPrincipal += principalPaid;
-                    yearlyInterest += interest;
-                    balance -= principalPaid;
-                }
-                yearlyData.push({ year, principalPaid: yearlyPrincipal, interestPaid: yearlyInterest, balance: Math.max(0, balance) });
-            }
-            return yearlyData;
-        }
-
-        function copyCryptoAddress() {
-            const addr = document.getElementById('cryptoAddress').textContent.trim();
-            navigator.clipboard.writeText(addr).then(() => {
-                showToast('✅ Wallet address copied! Thank you for supporting LucoVista! 💜', 'success');
-            });
-        }
-
-        function showToast(message, type = '') {
-            const toast = document.getElementById('toast');
-            toast.textContent = message;
-            toast.className = 'toast ' + type + ' show';
-            setTimeout(() => { toast.classList.remove('show'); }, 3000);
-        }
-
-        function populateBankSelect() {
-            const select = document.getElementById('bankSelect');
-            if (!select) return;
-            const params = getParams();
-            Object.keys(banks).forEach(key => {
-                const option = document.createElement('option');
-                option.value = key;
-                option.textContent = `${banks[key].full} — ${banks[key].rate}%`;
-                if (params.bank === key) option.selected = true;
-                select.appendChild(option);
-            });
-        }
-
-        function populateCarSelect() {
-            const select = document.getElementById('carModelSelect');
-            if (!select) return;
-            const params = getParams();
-            Object.keys(carModels).forEach(key => {
-                const option = document.createElement('option');
-                option.value = key;
-                option.textContent = `${carModels[key].name} (₹${carModels[key].price.toLocaleString('en-IN')})`;
-                if (params.car === key) option.selected = true;
-                select.appendChild(option);
-            });
-        }
-
-        function updatePage() {
-            const params = getParams();
-            let bankData = params.bank && banks[params.bank] ? banks[params.bank] : null;
-            let cityName = params.city ? params.city.charAt(0).toUpperCase() + params.city.slice(1) : '';
-            let amountFormatted = params.amount >= 100000 ? formatIndianNumber(params.amount) : '';
-            let carData = params.car && carModels[params.car] ? carModels[params.car] : null;
-
-            const calcType = params.calculator || 'emi';
-
-            // Show/hide calculator sections safely
-            const emiDiv = document.getElementById('emiCalculator');
-            const sipDiv = document.getElementById('sipCalculator');
-            const carDiv = document.getElementById('carCalculator');
-            const bankSelectGroup = document.getElementById('bankSelectGroup');
-            const amortTable = document.getElementById('amortizationTable');
-
-            if (emiDiv) emiDiv.style.display = (calcType === 'emi') ? 'block' : 'none';
-            if (sipDiv) sipDiv.style.display = (calcType === 'sip') ? 'block' : 'none';
-            if (carDiv) carDiv.style.display = (calcType === 'car') ? 'block' : 'none';
-            if (bankSelectGroup) bankSelectGroup.style.display = (calcType === 'car') ? 'none' : 'block';
-            if (amortTable) amortTable.style.display = (calcType === 'sip') ? 'none' : 'block';
-
-            // Update nav active states
-            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-            if (calcType === 'sip') {
-                const navSip = document.getElementById('navSip');
-                if (navSip) navSip.classList.add('active');
-            } else if (calcType === 'car') {
-                const navCar = document.getElementById('navCar');
-                if (navCar) navCar.classList.add('active');
-            } else {
-                const navEmi = document.getElementById('navEmi');
-                if (navEmi) navEmi.classList.add('active');
-            }
-
-            // Update calc type toggle
-            document.querySelectorAll('.calc-type-btn').forEach(b => b.classList.remove('active'));
-            const calcTitle = document.getElementById('calcTitle');
-            if (calcType === 'sip') {
-                const sipBtn = document.querySelector('.calc-type-btn[data-type="sip"]');
-                if (sipBtn) sipBtn.classList.add('active');
-                if (calcTitle) calcTitle.textContent = '📈 SIP Calculator';
-            } else {
-                const emiBtn = document.querySelector('.calc-type-btn[data-type="emi"]');
-                if (emiBtn) emiBtn.classList.add('active');
-                if (calcTitle) calcTitle.textContent = calcType === 'car' ? '🚗 Car Loan EMI Calculator' : '📊 EMI Calculator';
-            }
-
-            let loanAmount = params.amount || 2000000;
-            let interestRate = params.rate || (bankData ? bankData.rate : 8.5);
-            let tenure = params.tenure || 20;
-
-            // Set EMI values only when on EMI page
-            if (calcType === 'emi') {
-                const la = document.getElementById('loanAmount');
-                const as = document.getElementById('amountSlider');
-                const ir = document.getElementById('interestRate');
-                const rs = document.getElementById('rateSlider');
-                const lt = document.getElementById('loanTenure');
-                const ts = document.getElementById('tenureSlider');
-                const bs = document.getElementById('bankSelect');
-                
-                if (la) la.value = loanAmount;
-                if (as) as.value = loanAmount;
-                if (ir) ir.value = interestRate;
-                if (rs) rs.value = interestRate;
-                if (lt) lt.value = tenure;
-                if (ts) ts.value = tenure;
-                if (bs && bankData) bs.value = params.bank;
-            }
-
-            // Set Car values only when on Car page
-            if (calcType === 'car') {
-                const cp = document.getElementById('carPrice');
-                const cdp = document.getElementById('carDownPayment');
-                const cr = document.getElementById('carRate');
-                const ct = document.getElementById('carTenure');
-                
-                if (carData) {
-                    loanAmount = carData.price - 200000;
-                    interestRate = 9.5;
-                    tenure = 5;
-                    if (cp) cp.value = carData.price;
-                    if (cdp) cdp.value = 200000;
-                    if (cr) cr.value = interestRate;
-                    if (ct) ct.value = tenure;
-                } else {
-                    if (cp) loanAmount = parseInt(cp.value) - (parseInt(document.getElementById('carDownPayment')?.value) || 0);
-                    if (cr) interestRate = parseFloat(cr.value) || 9.5;
-                    if (ct) tenure = parseInt(ct.value) || 5;
-                }
-            }
-
-            // Build page title and meta
-            let titleParts = [], headingText = '', subtitleText = '';
-
-            if (calcType === 'sip') {
-                titleParts = ['SIP Calculator'];
-                headingText = 'SIP Calculator — Calculate Mutual Fund SIP Returns';
-                subtitleText = 'Plan your wealth with LucoVista\'s free SIP calculator.';
-            } else if (calcType === 'car') {
-                titleParts = ['Car Loan EMI Calculator'];
-                headingText = 'Car Loan EMI Calculator India';
-                subtitleText = 'Calculate car loan EMI for all models.';
-                if (carData) {
-                    titleParts = [`${carData.name} EMI Calculator`];
-                    headingText = `${carData.name} EMI Calculator — Car Loan`;
-                    subtitleText = `Calculate EMI for ${carData.name} (₹${carData.price.toLocaleString('en-IN')} on-road).`;
-                }
-            } else if (bankData && cityName) {
-                titleParts = [`${bankData.name} Home Loan EMI Calculator ${cityName}`];
-                headingText = `${bankData.name} Home Loan EMI Calculator — ${cityName}`;
-                subtitleText = `Calculate ${bankData.full} home loan EMI in ${cityName} at ${bankData.rate}% interest rate.`;
-            } else if (bankData) {
-                titleParts = [`${bankData.name} EMI Calculator — Home, Car, Personal Loan`];
-                headingText = `${bankData.name} EMI Calculator`;
-                subtitleText = `Calculate ${bankData.full} loan EMI at ${bankData.rate}% rate.`;
-            } else if (cityName) {
-                titleParts = [`Home Loan EMI Calculator ${cityName} — Compare 50+ Banks`];
-                headingText = `Home Loan EMI Calculator — ${cityName}`;
-                subtitleText = `Find best home loan EMI in ${cityName}. Compare SBI, HDFC, ICICI & more.`;
-            } else if (amountFormatted) {
-                titleParts = [`EMI Calculator for ${amountFormatted} Loan`];
-                headingText = `EMI Calculator for ${amountFormatted} Loan`;
-                subtitleText = `Calculate monthly EMI for ${amountFormatted} loan.`;
-            } else {
-                titleParts = ['EMI Calculator India — Free Online Loan EMI Calculator'];
-                headingText = 'EMI Calculator India — Free Online Loan EMI Calculator 2025';
-                subtitleText = 'Calculate your EMI instantly. Compare 50+ Indian banks. Free, no sign-up.';
-            }
-
-            // Set meta tags safely
-            const fullTitle = titleParts.join(' | ') + ' | LucoVista';
-            document.title = fullTitle;
-            
-            const setContent = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
-            const setAttr = (id, attr, val) => { const el = document.getElementById(id); if (el) el.setAttribute(attr, val); };
-            
-            setContent('pageTitle', fullTitle);
-            setAttr('ogTitle', 'content', fullTitle);
-            setAttr('twitterTitle', 'content', fullTitle);
-
-            const metaDesc = subtitleText + ' LucoVista — India\'s most trusted free financial calculator.';
-            setAttr('metaDescription', 'content', metaDesc);
-            setAttr('ogDescription', 'content', metaDesc);
-            setAttr('twitterDescription', 'content', metaDesc);
-
-            setContent('pageHeading', headingText);
-            setContent('pageSubtitle', subtitleText);
-            setContent('breadcrumbText', headingText);
-
-            // Update answer box
-            if (bankData) {
-                const answerBox = document.getElementById('answerBox');
-                if (answerBox) {
-                    answerBox.innerHTML = `<strong>⚡ Quick Answer:</strong> ${bankData.full} offers loans at ${bankData.rate}% p.a. (approx). Use LucoVista's calculator to check your exact EMI. Rates depend on CIBIL score, income, and loan amount.`;
-                }
-            }
-
-            // Calculate results safely
-            let result;
-            const mainResult = document.getElementById('mainResult');
-            const mainResultLabel = document.getElementById('mainResultLabel');
-            const detail1 = document.getElementById('detail1');
-            const detail2 = document.getElementById('detail2');
-            
-            if (calcType === 'sip') {
-                const sipAmt = parseInt(document.getElementById('sipAmount')?.value) || 5000;
-                const sipR = parseFloat(document.getElementById('sipRate')?.value) || 12;
-                const sipY = parseInt(document.getElementById('sipYears')?.value) || 10;
-                result = calculateSIP(sipAmt, sipR, sipY);
-                if (mainResult) mainResult.textContent = formatCurrency(result.futureValue);
-                if (mainResultLabel) mainResultLabel.textContent = 'Future Value';
-                if (detail1) {
-                    detail1.textContent = formatCurrency(result.totalInvested);
-                    const d1Label = detail1.parentElement?.querySelector('.detail-label');
-                    if (d1Label) d1Label.textContent = 'Total Invested';
-                }
-                if (detail2) {
-                    detail2.textContent = formatCurrency(result.wealthGain);
-                    const d2Label = detail2.parentElement?.querySelector('.detail-label');
-                    if (d2Label) d2Label.textContent = 'Wealth Gain';
-                }
-            } else {
-                result = calculateEMI(loanAmount, interestRate, tenure);
-                if (mainResult) mainResult.textContent = formatCurrency(result.emi);
-                if (mainResultLabel) mainResultLabel.textContent = 'Monthly EMI';
-                if (detail1) {
-                    detail1.textContent = formatCurrency(result.totalInterest);
-                    const d1Label = detail1.parentElement?.querySelector('.detail-label');
-                    if (d1Label) d1Label.textContent = 'Total Interest';
-                }
-                if (detail2) {
-                    detail2.textContent = formatCurrency(result.totalPayment);
-                    const d2Label = detail2.parentElement?.querySelector('.detail-label');
-                    if (d2Label) d2Label.textContent = 'Total Payment';
-                }
-
-                // Amortization only for EMI
-                if (calcType === 'emi') {
-                    const amortData = generateAmortization(loanAmount, interestRate, tenure);
-                    const amortBody = document.getElementById('amortBody');
-                    if (amortBody) {
-                        amortBody.innerHTML = amortData.map(d => 
-                            `<tr><td>Year ${d.year}</td><td>${formatCurrency(d.principalPaid)}</td><td>${formatCurrency(d.interestPaid)}</td><td>${formatCurrency(d.balance)}</td></tr>`
-                        ).join('');
-                    }
-                }
-            }
-
-            // Update FAQ
-            if (bankData) {
-                const faqBankQ = document.getElementById('faqBankQ');
-                const faqBankA = document.getElementById('faqBankA');
-                if (faqBankQ) faqBankQ.textContent = `What is the current ${bankData.full} interest rate?`;
-                if (faqBankA) faqBankA.textContent = `${bankData.full} offers loans at approximately ${bankData.rate}% p.a. Exact rates depend on your CIBIL score, income stability, and loan amount.`;
-            }
-
-            updateRelatedLinks(params);
-            updateSchema(headingText, bankData, cityName, calcType, interestRate);
-        }
-
-        function updateRelatedLinks(params) {
-            const grid = document.getElementById('relatedLinksGrid');
-            const sidebarBankLinks = document.getElementById('sidebarBankLinks');
-            if (!grid && !sidebarBankLinks) return;
-            
-            let links = [];
-
-            ['sbi', 'hdfc', 'icici', 'axis', 'pnb', 'kotak', 'bajaj', 'lic'].forEach(key => {
-                if (params.bank !== key && banks[key]) {
-                    links.push(`<a href="/emi-calculator/bank/${key}/" class="related-link">${banks[key].name} EMI</a>`);
-                }
-            });
-
-            [500000, 1000000, 2000000, 5000000, 10000000, 20000000].forEach(amt => {
-                if (params.amount !== amt) {
-                    links.push(`<a href="/emi-calculator/amount/${amt}/" class="related-link">${formatIndianNumber(amt)} EMI</a>`);
-                }
-            });
-
-            ['mumbai', 'delhi', 'bangalore', 'chennai', 'hyderabad', 'pune', 'kolkata', 'ahmedabad'].forEach(city => {
-                if (params.city !== city) {
-                    links.push(`<a href="/emi-calculator/city/${city}/" class="related-link">${city.charAt(0).toUpperCase()+city.slice(1)} EMI</a>`);
-                }
-            });
-
-            if (params.calculator !== 'sip') {
-                links.push('<a href="/sip-calculator/" class="related-link">SIP Calculator</a>');
-            }
-
-            if (params.calculator !== 'car') {
-                links.push('<a href="/car-loan/maruti-swift/" class="related-link">Car Loan EMI</a>');
-                ['maruti-swift', 'hyundai-creta', 'tata-nexon'].forEach(car => {
-                    if (carModels[car]) links.push(`<a href="/car-loan/${car}/" class="related-link">${carModels[car].name} EMI</a>`);
-                });
-            }
-
-            links = links.sort(() => Math.random() - 0.5).slice(0, 24);
-            if (grid) grid.innerHTML = links.join('');
-
-            if (sidebarBankLinks) {
-                let bankLinks = Object.keys(banks).slice(0, 10).map(key => 
-                    `<a href="/emi-calculator/bank/${key}/" class="related-link" style="display:block;margin-bottom:6px;">🏦 ${banks[key].full} (${banks[key].rate}%)</a>`
-                ).join('');
-                sidebarBankLinks.innerHTML = bankLinks;
-            }
-        }
-
-        function updateSchema(headingText, bankData, cityName, calcType, interestRate) {
-            const faqSchema = {
-                "@context": "https://schema.org",
-                "@type": "FAQPage",
-                "mainEntity": [
-                    {
-                        "@type": "Question",
-                        "name": "How is EMI calculated?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "EMI = P × r × (1+r)^n / ((1+r)^n - 1), where P=principal, r=monthly rate, n=total months."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": bankData ? `What is ${bankData.full} interest rate?` : "What are home loan rates in India?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": bankData ? `${bankData.full} offers ~${bankData.rate}% p.a.` : "Rates: 8.35%-10.50% p.a. depending on bank and CIBIL score."
-                        }
-                    }
-                ]
-            };
-
-            const productSchema = {
-                "@context": "https://schema.org",
-                "@type": "FinancialProduct",
-                "name": headingText,
-                "description": document.getElementById('metaDescription')?.getAttribute('content') || '',
-                "provider": { "@type": "Organization", "name": "LucoVista" },
-                "interestRate": { "@type": "QuantitativeValue", "value": interestRate, "unitText": "Percent" }
-            };
-
-            const breadcrumbSchema = {
-                "@context": "https://schema.org",
-                "@type": "BreadcrumbList",
-                "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://lucovista.netlify.app" },
-                    { "@type": "ListItem", "position": 2, "name": headingText }
-                ]
-            };
-
-            const faqEl = document.getElementById('faqSchema');
-            const prodEl = document.getElementById('productSchema');
-            const breadEl = document.getElementById('breadcrumbSchema');
-            if (faqEl) faqEl.textContent = JSON.stringify(faqSchema);
-            if (prodEl) prodEl.textContent = JSON.stringify(productSchema);
-            if (breadEl) breadEl.textContent = JSON.stringify(breadcrumbSchema);
-        }
-
-        function setupListeners() {
-            // EMI sliders - only work when visible
-            const fields = [
-                { input: 'loanAmount', slider: 'amountSlider' },
-                { input: 'interestRate', slider: 'rateSlider' },
-                { input: 'loanTenure', slider: 'tenureSlider' }
-            ];
-
-            fields.forEach(({ input, slider }) => {
-                const inp = document.getElementById(input);
-                const sld = document.getElementById(slider);
-                if (!inp || !sld) return;
-
-                function syncAndUpdate() {
-                    if (inp.offsetParent === null) return;
-                    const val = parseFloat(inp.value);
-                    const min = parseFloat(sld.min);
-                    const max = parseFloat(sld.max);
-                    const pct = ((val - min) / (max - min)) * 100;
-                    sld.value = val;
-                    sld.style.background = `linear-gradient(to right, var(--primary) 0%, var(--primary) ${pct}%, var(--border) ${pct}%, var(--border) 100%)`;
-                    updatePage();
-                }
-
-                syncAndUpdate();
-
-                inp.addEventListener('input', syncAndUpdate);
-                sld.addEventListener('input', function() {
-                    inp.value = sld.value;
-                    syncAndUpdate();
-                });
-            });
-
-            // Bank select
-            document.getElementById('bankSelect')?.addEventListener('change', function() {
-                const val = this.value;
-                if (val && banks[val]) {
-                    window.location.href = '/emi-calculator/bank/' + val + '/';
-                }
-            });
-
-            // Car model select
-            document.getElementById('carModelSelect')?.addEventListener('change', function() {
-                const val = this.value;
-                if (val && carModels[val]) {
-                    window.location.href = '/car-loan/' + val + '/';
-                }
-            });
-
-            // Calculator type toggle
-            document.querySelectorAll('.calc-type-btn').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const type = this.dataset.type;
-                    if (type === 'emi') {
-                        window.location.href = '/emi-calculator/bank/sbi/';
-                    } else if (type === 'sip') {
-                        window.location.href = '/sip-calculator/';
-                    }
-                });
-            });
-
-            // SIP sliders
-            ['sipAmount', 'sipRate', 'sipYears'].forEach(id => {
-                const el = document.getElementById(id);
-                const slider = document.getElementById(id + 'Slider');
-                if (el && slider) {
-                    function syncSIP() {
-                        if (el.offsetParent === null) return;
-                        const val = parseFloat(el.value);
-                        const min = parseFloat(slider.min);
-                        const max = parseFloat(slider.max);
-                        const pct = ((val - min) / (max - min)) * 100;
-                        slider.value = val;
-                        slider.style.background = `linear-gradient(to right, var(--primary) 0%, var(--primary) ${pct}%, var(--border) ${pct}%, var(--border) 100%)`;
-                        updatePage();
-                    }
-                    syncSIP();
-                    el.addEventListener('input', syncSIP);
-                    slider.addEventListener('input', function() {
-                        el.value = slider.value;
-                        syncSIP();
-                    });
-                }
-            });
-
-            // Car inputs
-            ['carPrice', 'carDownPayment', 'carRate', 'carTenure'].forEach(id => {
-                const el = document.getElementById(id);
-                if (el) el.addEventListener('input', updatePage);
-            });
-
-            // FAQ accordion
-            document.querySelectorAll('.faq-question').forEach(q => {
-                q.addEventListener('click', () => q.parentElement.classList.toggle('open'));
-            });
-
-            // Crypto address copy
-            document.getElementById('cryptoAddress')?.addEventListener('click', copyCryptoAddress);
-
-            // Donation options
-            document.querySelectorAll('.donation-option').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    document.querySelectorAll('.donation-option').forEach(b => b.classList.remove('selected'));
-                    this.classList.add('selected');
-                });
-            });
-        }
-
-        // Check for static params from build script
-        if (window.STATIC_PARAMS) {
-            const newUrl = window.location.pathname + '?' + window.STATIC_PARAMS;
-            window.history.replaceState({}, '', newUrl);
-        }
-
-        // Initialize everything
-        populateBankSelect();
-        populateCarSelect();
-        updatePage();
-        setupListeners();
-
-        // Random social proof
-        const supporterCount = 250 + Math.floor(Math.random() * 30);
-        const socialProof = document.getElementById('donationSocialProof');
-        if (socialProof) socialProof.textContent = `💜 Join ${supporterCount}+ smart Indians who support free financial tools!`;
-
-        console.log('✅ LucoVista initialized successfully');
-        console.log('📊 118 programmatic pages ready for indexing');
-        console.log('💰 7 Adsterra ad placements active');
-        console.log('💜 Crypto donation via Uniswap wallet configured');
+        atOptions = {'key':'7d1cab36687f7cee3e7955b77a6f432e','format':'iframe','height':60,'width':468,'params':{}};
     </script>
+    <script src="https://www.highperformanceformat.com/7d1cab36687f7cee3e7955b77a6f432e/invoke.js"></script>
+</div>
+
+<nav class="nav-bar">
+    <div class="nav-container">
+        <a href="/" class="logo">🔮LucoVista</a>
+        <div class="nav-links">
+            <a href="/emi-calculator/bank/sbi/" class="nav-link active" id="navEmi">EMI Calculator</a>
+            <a href="/sip-calculator/" class="nav-link" id="navSip">SIP Calculator</a>
+            <a href="/emi-calculator/bank/sbi/" class="nav-link">SBI EMI</a>
+            <a href="/emi-calculator/bank/hdfc/" class="nav-link">HDFC EMI</a>
+            <a href="/emi-calculator/amount/5000000/" class="nav-link">₹50L EMI</a>
+            <a href="/car-loan/maruti-swift/" class="nav-link" id="navCar">Car Loan</a>
+        </div>
+    </div>
+</nav>
+
+<div class="main-container">
+<div class="content-area">
+
+<div class="breadcrumb"><a href="/">🏠 Home</a> › <span id="breadcrumbText">EMI Calculator</span></div>
+<h1 id="pageHeading">EMI Calculator India — Free Online Loan EMI Calculator 2025</h1>
+<p class="subtitle" id="pageSubtitle">Calculate your monthly EMI instantly. Compare 50+ Indian banks. Free, no sign-up required.</p>
+
+<div class="answer-box" id="answerBox">
+    <strong>⚡ Quick Answer:</strong> Use LucoVista's free EMI calculator to find your exact monthly payment. Enter loan amount, interest rate, and tenure.
+</div>
+
+<div class="calculator-card">
+    <div class="calc-header">
+        <h2 id="calcTitle">📊 EMI Calculator</h2>
+        <div class="calc-type-toggle">
+            <button class="calc-type-btn active" data-type="emi">EMI</button>
+            <button class="calc-type-btn" data-type="sip">SIP</button>
+        </div>
+    </div>
+
+    <div id="emiCalculator">
+        <div class="input-group">
+            <label>💰 Loan Amount</label>
+            <div class="input-row">
+                <input type="number" id="loanAmount" value="2000000" min="50000" max="50000000" step="100000">
+                <span>INR</span>
+            </div>
+            <input type="range" id="amountSlider" min="50000" max="50000000" step="50000" value="2000000">
+            <div class="slider-labels"><span>₹50K</span><span>₹5Cr</span></div>
+        </div>
+        <div class="input-group">
+            <label>📈 Interest Rate (% per annum)</label>
+            <div class="input-row">
+                <input type="number" id="interestRate" value="8.5" min="5" max="30" step="0.1">
+                <span>%</span>
+            </div>
+            <input type="range" id="rateSlider" min="5" max="30" step="0.1" value="8.5">
+            <div class="slider-labels"><span>5%</span><span>30%</span></div>
+        </div>
+        <div class="input-group">
+            <label>⏳ Loan Tenure</label>
+            <div class="input-row">
+                <input type="number" id="loanTenure" value="20" min="1" max="40" step="1">
+                <span>Years</span>
+            </div>
+            <input type="range" id="tenureSlider" min="1" max="40" step="1" value="20">
+            <div class="slider-labels"><span>1 Year</span><span>40 Years</span></div>
+        </div>
+        <div class="input-group" id="bankSelectGroup">
+            <label>🏦 Select Bank</label>
+            <div class="input-row">
+                <select id="bankSelect"><option value="">-- All Banks (Default 8.5%) --</option></select>
+            </div>
+        </div>
+    </div>
+
+    <div id="sipCalculator" style="display:none;">
+        <div class="input-group">
+            <label>💰 Monthly Investment</label>
+            <div class="input-row">
+                <input type="number" id="sipAmount" value="5000" min="500" max="500000" step="500"><span>INR</span>
+            </div>
+            <input type="range" id="sipAmountSlider" min="500" max="500000" step="500" value="5000">
+            <div class="slider-labels"><span>₹500</span><span>₹5L</span></div>
+        </div>
+        <div class="input-group">
+            <label>📈 Expected Return Rate (% p.a.)</label>
+            <div class="input-row">
+                <input type="number" id="sipRate" value="12" min="1" max="40" step="0.1"><span>%</span>
+            </div>
+            <input type="range" id="sipRateSlider" min="1" max="40" step="0.1" value="12">
+            <div class="slider-labels"><span>1%</span><span>40%</span></div>
+        </div>
+        <div class="input-group">
+            <label>⏳ Investment Period</label>
+            <div class="input-row">
+                <input type="number" id="sipYears" value="10" min="1" max="40" step="1"><span>Years</span>
+            </div>
+            <input type="range" id="sipYearsSlider" min="1" max="40" step="1" value="10">
+            <div class="slider-labels"><span>1 Year</span><span>40 Years</span></div>
+        </div>
+    </div>
+
+    <div id="carCalculator" style="display:none;">
+        <div class="input-group">
+            <label>🚗 Select Car Model</label>
+            <div class="input-row">
+                <select id="carModelSelect"><option value="">-- Choose Car Model --</option></select>
+            </div>
+        </div>
+        <div class="input-group">
+            <label>💰 Car Price (On-Road)</label>
+            <div class="input-row"><input type="number" id="carPrice" value="800000" min="300000" max="50000000" step="10000"><span>INR</span></div>
+        </div>
+        <div class="input-group">
+            <label>💵 Down Payment</label>
+            <div class="input-row"><input type="number" id="carDownPayment" value="200000" min="0" max="50000000" step="10000"><span>INR</span></div>
+        </div>
+        <div class="input-group">
+            <label>📈 Interest Rate (% p.a.)</label>
+            <div class="input-row"><input type="number" id="carRate" value="9.5" min="5" max="20" step="0.1"><span>%</span></div>
+        </div>
+        <div class="input-group">
+            <label>⏳ Loan Tenure</label>
+            <div class="input-row"><input type="number" id="carTenure" value="5" min="1" max="7" step="1"><span>Years</span></div>
+        </div>
+    </div>
+
+    <div class="result-box">
+        <div class="result-emi" id="mainResult">₹17,361</div>
+        <div class="result-label" id="mainResultLabel">Monthly EMI</div>
+        <div class="result-details">
+            <div class="detail-item"><div class="detail-value" id="detail1">₹21,66,640</div><div class="detail-label">Total Interest</div></div>
+            <div class="detail-item"><div class="detail-value" id="detail2">₹41,66,640</div><div class="detail-label">Total Payment</div></div>
+        </div>
+    </div>
+
+    <div class="table-scroll" id="amortizationTable" style="margin-top:14px;">
+        <table class="amortization-table">
+            <thead><tr><th>Year</th><th>Principal Paid</th><th>Interest Paid</th><th>Balance</th></tr></thead>
+            <tbody id="amortBody"></tbody>
+        </table>
+    </div>
+</div>
+
+<div class="mid-ad-section">
+    <div class="ad-label">📢 Sponsored</div>
+    <script>
+        atOptions = {'key':'cd14f922c3a33721536edf70251d9469','format':'iframe','height':90,'width':728,'params':{}};
+    </script>
+    <script src="https://www.highperformanceformat.com/cd14f922c3a33721536edf70251d9469/invoke.js"></script>
+</div>
+
+<div class="faq-section">
+    <h2>❓ Frequently Asked Questions</h2>
+    <div class="faq-item open">
+        <div class="faq-question">How is EMI calculated?</div>
+        <div class="faq-answer">EMI = P × r × (1+r)^n / ((1+r)^n - 1), where P=principal, r=monthly interest rate, n=total months.</div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-question" id="faqBankQ">What are current home loan interest rates in India?</div>
+        <div class="faq-answer" id="faqBankA">Home loan rates range from 8.35% to 10.50% p.a. depending on bank and CIBIL score.</div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-question">Can prepayment reduce my EMI?</div>
+        <div class="faq-answer">Yes! Partial prepayment reduces outstanding principal, lowering EMI or tenure.</div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-question">Is LucoVista really free?</div>
+        <div class="faq-answer">100% free! No sign-up, no hidden fees. Supported by ads and donors. ❤️</div>
+    </div>
+</div>
+
+<div class="related-section">
+    <h2>🔗 Related Calculators</h2>
+    <div class="related-grid" id="relatedLinksGrid"></div>
+</div>
+
+<div class="bottom-ad-section">
+    <div class="ad-label">📢 Sponsored</div>
+    <script src="https://pl29630601.effectivecpmnetwork.com/7a/65/55/7a6555d88749b6adb1ff2e3b5e871613.js"></script>
+</div>
+
+</div>
+
+<aside class="sidebar">
+
+<div class="sidebar-ad">
+    <div class="ad-label">📢 Sponsored</div>
+    <script>
+        atOptions = {'key':'7a911d3b54966c6db8d90558dd9f9701','format':'iframe','height':50,'width':320,'params':{}};
+    </script>
+    <script src="https://www.highperformanceformat.com/7a911d3b54966c6db8d90558dd9f9701/invoke.js"></script>
+</div>
+
+<div class="donation-box">
+    <h3>💜 Support LucoVista</h3>
+    <p class="donation-message">We're 100% free. If we've helped you, consider supporting us! ☕</p>
+    <div class="donation-options">
+        <button class="donation-option" data-amount="5">☕ $5</button>
+        <button class="donation-option selected" data-amount="10">🍕 $10</button>
+        <button class="donation-option" data-amount="25">🎁 $25</button>
+        <button class="donation-option" data-amount="0">💝 Any</button>
+    </div>
+    <p style="font-size:10px;color:#b2bec3;margin-bottom:4px;">Uniswap Wallet (ETH/USDC/USDT):</p>
+    <div class="donation-address" id="cryptoAddress" title="Click to copy">0x0Fa2C761De5309A3Dc1a6D0d38D8f17c28995993</div>
+    <button class="copy-btn" onclick="copyCryptoAddress()">📋 Copy Address</button>
+    <p style="font-size:10px;color:#636e72;margin-top:8px;">ETH • USDC • USDT • Uniswap • Trust Wallet • MetaMask</p>
+</div>
+
+<div class="sidebar-ad">
+    <div class="ad-label">📢 Sponsored</div>
+    <script>
+        atOptions = {'key':'6ccbc85d21aae35103f7f07831ba4073','format':'iframe','height':600,'width':160,'params':{}};
+    </script>
+    <script src="https://www.highperformanceformat.com/6ccbc85d21aae35103f7f07831ba4073/invoke.js"></script>
+</div>
+
+<div class="sidebar-ad">
+    <div class="ad-label">📢 Sponsored</div>
+    <script>
+        atOptions = {'key':'b731ec333568ab53dee669cc11ee0bc5','format':'iframe','height':300,'width':160,'params':{}};
+    </script>
+    <script src="https://www.highperformanceformat.com/b731ec333568ab53dee669cc11ee0bc5/invoke.js"></script>
+</div>
+
+<div class="sidebar-ad">
+    <div class="ad-label">📢 Sponsored</div>
+    <script>
+        atOptions = {'key':'baa58f2a53c279a68afb75a6833ee595','format':'iframe','height':250,'width':300,'params':{}};
+    </script>
+    <script src="https://www.highperformanceformat.com/baa58f2a53c279a68afb75a6833ee595/invoke.js"></script>
+</div>
+
+<div class="related-section" style="padding:16px;">
+    <h3 style="font-size:14px;margin-bottom:10px;">🏦 Top Bank EMI Calculators</h3>
+    <div id="sidebarBankLinks"></div>
+</div>
+
+</aside>
+</div>
+
+<footer class="footer">
+    <p>© 2025 <strong>LucoVista</strong> — India's Smartest Free Financial Calculator Platform</p>
+    <p style="margin-top:4px;font-size:11px;">📧 support@lucovista.in | Privacy Policy | Terms of Use | Made with 💜 in India</p>
+</footer>
+
+<div class="toast" id="toast">✅ Address copied! Thank you 💜</div>
+
+<script>
+const banks = {
+    sbi:{name:'SBI',full:'State Bank of India',rate:8.50},hdfc:{name:'HDFC',full:'HDFC Bank',rate:8.60},
+    icici:{name:'ICICI',full:'ICICI Bank',rate:8.65},axis:{name:'Axis',full:'Axis Bank',rate:8.55},
+    pnb:{name:'PNB',full:'Punjab National Bank',rate:8.40},bob:{name:'BoB',full:'Bank of Baroda',rate:8.45},
+    canara:{name:'Canara',full:'Canara Bank',rate:8.50},kotak:{name:'Kotak',full:'Kotak Mahindra Bank',rate:8.70},
+    bajaj:{name:'Bajaj Finserv',full:'Bajaj Finserv',rate:8.75},lic:{name:'LIC HFL',full:'LIC Housing Finance',rate:8.50},
+    union:{name:'Union Bank',full:'Union Bank of India',rate:8.45},yesbank:{name:'YES Bank',full:'YES Bank',rate:8.70},
+    indusind:{name:'IndusInd',full:'IndusInd Bank',rate:8.75},bandhan:{name:'Bandhan',full:'Bandhan Bank',rate:8.60},
+    rbl:{name:'RBL',full:'RBL Bank',rate:8.90},idfcfirst:{name:'IDFC First',full:'IDFC First Bank',rate:8.65},
+    federal:{name:'Federal Bank',full:'Federal Bank',rate:8.75},tata:{name:'Tata Capital',full:'Tata Capital',rate:8.50},
+    mahindra:{name:'Mahindra Fin',full:'Mahindra Finance',rate:8.95},shriram:{name:'Shriram Fin',full:'Shriram Finance',rate:9.00}
+};
+const cities = ['Mumbai','Delhi','Bangalore','Chennai','Hyderabad','Pune','Kolkata','Ahmedabad','Jaipur','Lucknow','Indore','Chandigarh','Surat','Nagpur','Kochi'];
+const carModels = {
+    'maruti-swift':{name:'Maruti Swift',price:750000},'hyundai-creta':{name:'Hyundai Creta',price:1500000},
+    'tata-nexon':{name:'Tata Nexon',price:1200000},'mahindra-thar':{name:'Mahindra Thar',price:1500000},
+    'kia-seltos':{name:'Kia Seltos',price:1450000},'toyota-fortuner':{name:'Toyota Fortuner',price:3800000},
+    'honda-city':{name:'Honda City',price:1400000}
+};
+
+function fmt(n){return'₹'+Math.round(n).toLocaleString('en-IN');}
+function fmtIndian(n){if(n>=10000000)return'₹'+(n/10000000).toFixed(n%10000000===0?0:1)+' Crore';if(n>=100000)return'₹'+(n/100000).toFixed(n%100000===0?0:1)+' Lakh';return'₹'+n.toLocaleString('en-IN');}
+function getParams(){
+    var p=window.location.pathname.replace(/\/$/,'').split('/').filter(function(x){return x;});
+    var q=new URLSearchParams(window.location.search);
+    var params={calculator:q.get('calculator')||'emi',bank:q.get('bank')||'',amount:parseInt(q.get('amount'))||0,city:q.get('city')||'',rate:parseFloat(q.get('rate'))||0,tenure:parseInt(q.get('tenure'))||0,car:q.get('car')||''};
+    if(p.indexOf('sip-calculator')!==-1)params.calculator='sip';
+    if(p.indexOf('car-loan')!==-1){params.calculator='car';var ci=p.indexOf('car-loan')+1;if(p[ci])params.car=p[ci];}
+    if(p.indexOf('bank')!==-1){var bi=p.indexOf('bank')+1;if(p[bi])params.bank=p[bi];}
+    if(p.indexOf('city')!==-1){var cti=p.indexOf('city')+1;if(p[cti])params.city=p[cti];}
+    if(p.indexOf('amount')!==-1){var ai=p.indexOf('amount')+1;if(p[ai])params.amount=parseInt(p[ai]);}
+    return params;
+}
+function calcEMI(P,r,y){
+    var mr=r/12/100,m=y*12;
+    if(mr===0)return{emi:P/m,ti:0,tp:P};
+    var emi=P*mr*Math.pow(1+mr,m)/(Math.pow(1+mr,m)-1),tp=emi*m;
+    return{emi:emi,ti:tp-P,tp:tp};
+}
+function calcSIP(M,r,y){
+    var mr=r/12/100,m=y*12;
+    var fv=M*((Math.pow(1+mr,m)-1)/mr)*(1+mr),inv=M*m;
+    return{fv:fv,inv:inv,gain:fv-inv};
+}
+function amortize(P,r,y){
+    var mr=r/12/100,m=y*12,emi=P*mr*Math.pow(1+mr,m)/(Math.pow(1+mr,m)-1),bal=P,data=[];
+    for(var yr=1;yr<=Math.min(y,5);yr++){
+        var yp=0,yi=0;
+        for(var mo=0;mo<12;mo++){var interest=bal*mr,pr=emi-interest;yp+=pr;yi+=interest;bal-=pr;}
+        data.push({year:yr,pp:yp,ip:yi,bal:Math.max(0,bal)});
+    }
+    return data;
+}
+function copyCryptoAddress(){
+    var a=document.getElementById('cryptoAddress').textContent.trim();
+    navigator.clipboard.writeText(a).then(function(){
+        var t=document.getElementById('toast');t.className='toast success show';
+        setTimeout(function(){t.classList.remove('show');},2500);
+    });
+}
+function populateSelects(){
+    var bs=document.getElementById('bankSelect'),pr=getParams();
+    Object.keys(banks).forEach(function(k){
+        var o=document.createElement('option');o.value=k;o.textContent=banks[k].full+' — '+banks[k].rate+'%';
+        if(pr.bank===k)o.selected=true;bs.appendChild(o);
+    });
+    var cs=document.getElementById('carModelSelect');
+    Object.keys(carModels).forEach(function(k){
+        var o=document.createElement('option');o.value=k;o.textContent=carModels[k].name+' (₹'+carModels[k].price.toLocaleString('en-IN')+')';
+        if(pr.car===k)o.selected=true;cs.appendChild(o);
+    });
+}
+
+function updatePage(){
+    var p=getParams();
+    var bd=p.bank&&banks[p.bank]?banks[p.bank]:null;
+    var cn=p.city?p.city.charAt(0).toUpperCase()+p.city.slice(1):'';
+    var af=p.amount>=100000?fmtIndian(p.amount):'';
+    var cd=p.car&&carModels[p.car]?carModels[p.car]:null;
+    var ct=p.calculator||'emi';
+    var LA=p.amount||2000000,IR=p.rate||(bd?bd.rate:8.5),T=p.tenure||20;
+
+    // Show/hide sections
+    document.getElementById('emiCalculator').style.display=(ct==='emi')?'block':'none';
+    document.getElementById('sipCalculator').style.display=(ct==='sip')?'block':'none';
+    document.getElementById('carCalculator').style.display=(ct==='car')?'block':'none';
+    document.getElementById('bankSelectGroup').style.display=(ct==='car')?'none':'block';
+    document.getElementById('amortizationTable').style.display=(ct==='sip')?'none':'block';
+
+    // Nav active
+    document.querySelectorAll('.nav-link').forEach(function(l){l.classList.remove('active');});
+    if(ct==='sip')document.getElementById('navSip').classList.add('active');
+    else if(ct==='car')document.getElementById('navCar').classList.add('active');
+    else document.getElementById('navEmi').classList.add('active');
+
+    // Toggle buttons
+    document.querySelectorAll('.calc-type-btn').forEach(function(b){b.classList.remove('active');});
+    document.getElementById('calcTitle').textContent=ct==='sip'?'📈 SIP Calculator':(ct==='car'?'🚗 Car Loan EMI Calculator':'📊 EMI Calculator');
+    if(ct==='sip')document.querySelector('.calc-type-btn[data-type="sip"]').classList.add('active');
+    else document.querySelector('.calc-type-btn[data-type="emi"]').classList.add('active');
+
+    // Set EMI values
+    if(ct==='emi'){
+        document.getElementById('loanAmount').value=LA;document.getElementById('amountSlider').value=LA;
+        document.getElementById('interestRate').value=IR;document.getElementById('rateSlider').value=IR;
+        document.getElementById('loanTenure').value=T;document.getElementById('tenureSlider').value=T;
+        if(bd)document.getElementById('bankSelect').value=p.bank;
+        updateAllSliderBgs();
+    }
+    // Set Car values
+    if(ct==='car'){
+        if(cd){LA=cd.price-200000;IR=9.5;T=5;
+            document.getElementById('carPrice').value=cd.price;document.getElementById('carDownPayment').value=200000;
+            document.getElementById('carRate').value=IR;document.getElementById('carTenure').value=T;
+        }else{
+            LA=(parseInt(document.getElementById('carPrice').value)||800000)-(parseInt(document.getElementById('carDownPayment').value)||200000);
+            IR=parseFloat(document.getElementById('carRate').value)||9.5;T=parseInt(document.getElementById('carTenure').value)||5;
+        }
+    }
+
+    // Titles
+    var titleP=[],h='',st='';
+    if(ct==='sip'){titleP=['SIP Calculator'];h='SIP Calculator — Mutual Fund SIP Returns';st='Plan your wealth with free SIP calculator.';}
+    else if(ct==='car'){titleP=['Car Loan EMI Calculator'];h='Car Loan EMI Calculator India';st='Calculate car loan EMI for all models.';
+        if(cd){titleP=[cd.name+' EMI Calculator'];h=cd.name+' EMI Calculator — Car Loan';st='Calculate EMI for '+cd.name+'.';}}
+    else if(bd&&cn){titleP=[bd.name+' Home Loan EMI Calculator '+cn];h=bd.name+' Home Loan EMI Calculator — '+cn;st='Calculate '+bd.full+' home loan EMI in '+cn+' at '+bd.rate+'%.';}
+    else if(bd){titleP=[bd.name+' EMI Calculator'];h=bd.name+' EMI Calculator';st='Calculate '+bd.full+' loan EMI at '+bd.rate+'% rate.';}
+    else if(cn){titleP=['Home Loan EMI Calculator '+cn];h='Home Loan EMI Calculator — '+cn;st='Find best home loan EMI in '+cn+'.';}
+    else if(af){titleP=['EMI Calculator for '+af+' Loan'];h='EMI Calculator for '+af+' Loan';st='Calculate monthly EMI for '+af+' loan.';}
+    else{titleP=['EMI Calculator India'];h='EMI Calculator India — Free Online Loan EMI Calculator 2025';st='Calculate your EMI instantly. Compare 50+ Indian banks.';}
+
+    var ft=titleP.join(' | ')+' | LucoVista';
+    document.title=ft;
+    document.getElementById('pageTitle').textContent=ft;
+    document.getElementById('ogTitle').setAttribute('content',ft);
+    document.getElementById('twitterTitle').setAttribute('content',ft);
+    var md=st+' LucoVista — free financial calculator.';
+    document.getElementById('metaDescription').setAttribute('content',md);
+    document.getElementById('ogDescription').setAttribute('content',md);
+    document.getElementById('twitterDescription').setAttribute('content',md);
+    document.getElementById('pageHeading').textContent=h;
+    document.getElementById('pageSubtitle').textContent=st;
+    document.getElementById('breadcrumbText').textContent=h;
+    if(bd)document.getElementById('answerBox').innerHTML='<strong>⚡ Quick Answer:</strong> '+bd.full+' offers loans at '+bd.rate+'% p.a. Use our calculator to check your exact EMI.';
+
+    // Calculate
+    var result;
+    if(ct==='sip'){
+        var sa=parseInt(document.getElementById('sipAmount').value)||5000,sr=parseFloat(document.getElementById('sipRate').value)||12,sy=parseInt(document.getElementById('sipYears').value)||10;
+        result=calcSIP(sa,sr,sy);
+        document.getElementById('mainResult').textContent=fmt(result.fv);
+        document.getElementById('mainResultLabel').textContent='Future Value';
+        document.getElementById('detail1').textContent=fmt(result.inv);
+        document.getElementById('detail1').parentElement.querySelector('.detail-label').textContent='Total Invested';
+        document.getElementById('detail2').textContent=fmt(result.gain);
+        document.getElementById('detail2').parentElement.querySelector('.detail-label').textContent='Wealth Gain';
+    }else{
+        result=calcEMI(LA,IR,T);
+        document.getElementById('mainResult').textContent=fmt(result.emi);
+        document.getElementById('mainResultLabel').textContent='Monthly EMI';
+        document.getElementById('detail1').textContent=fmt(result.ti);
+        document.getElementById('detail1').parentElement.querySelector('.detail-label').textContent='Total Interest';
+        document.getElementById('detail2').textContent=fmt(result.tp);
+        document.getElementById('detail2').parentElement.querySelector('.detail-label').textContent='Total Payment';
+        if(ct==='emi'){
+            var ad=amortize(LA,IR,T);
+            document.getElementById('amortBody').innerHTML=ad.map(function(d){return'<tr><td>Year '+d.year+'</td><td>'+fmt(d.pp)+'</td><td>'+fmt(d.ip)+'</td><td>'+fmt(d.bal)+'</td></tr>';}).join('');
+        }
+    }
+
+    if(bd){document.getElementById('faqBankQ').textContent='What is the current '+bd.full+' interest rate?';
+        document.getElementById('faqBankA').textContent=bd.full+' offers loans at ~'+bd.rate+'% p.a. Rates depend on CIBIL score and income.';}
+
+    // Related links
+    var links=[],grid=document.getElementById('relatedLinksGrid'),sbl=document.getElementById('sidebarBankLinks');
+    ['sbi','hdfc','icici','axis','pnb','kotak','bajaj','lic'].forEach(function(k){if(p.bank!==k&&banks[k])links.push('<a href="/emi-calculator/bank/'+k+'/" class="related-link">'+banks[k].name+' EMI</a>');});
+    [500000,1000000,2000000,5000000,10000000,20000000].forEach(function(a){if(p.amount!==a)links.push('<a href="/emi-calculator/amount/'+a+'/" class="related-link">'+fmtIndian(a)+' EMI</a>');});
+    ['mumbai','delhi','bangalore','chennai','hyderabad','pune','kolkata','ahmedabad'].forEach(function(c){if(p.city!==c)links.push('<a href="/emi-calculator/city/'+c+'/" class="related-link">'+c.charAt(0).toUpperCase()+c.slice(1)+' EMI</a>');});
+    if(p.calculator!=='sip')links.push('<a href="/sip-calculator/" class="related-link">SIP Calculator</a>');
+    if(p.calculator!=='car'){links.push('<a href="/car-loan/maruti-swift/" class="related-link">Car Loan EMI</a>');
+        ['maruti-swift','hyundai-creta','tata-nexon'].forEach(function(c){links.push('<a href="/car-loan/'+c+'/" class="related-link">'+carModels[c].name+' EMI</a>');});}
+    links.sort(function(){return Math.random()-0.5;});
+    grid.innerHTML=links.slice(0,24).join('');
+    sbl.innerHTML=Object.keys(banks).slice(0,10).map(function(k){return'<a href="/emi-calculator/bank/'+k+'/" class="related-link" style="display:block;margin-bottom:4px;">🏦 '+banks[k].full+' ('+banks[k].rate+'%)</a>';}).join('');
+
+    // Schema
+    var fs='{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is EMI calculated?","acceptedAnswer":{"@type":"Answer","text":"EMI = P × r × (1+r)^n / ((1+r)^n - 1)"}},{"@type":"Question","name":"'+(bd?'What is '+bd.full+' interest rate?':'What are home loan rates in India?')+'","acceptedAnswer":{"@type":"Answer","text":"'+(bd?bd.full+' offers ~'+bd.rate+'% p.a.':'Rates: 8.35%-10.50% p.a.')+'"}}]}';
+    var ps='{"@context":"https://schema.org","@type":"FinancialProduct","name":"'+h+'","provider":{"@type":"Organization","name":"LucoVista"},"interestRate":{"@type":"QuantitativeValue","value":'+IR+',"unitText":"Percent"}}';
+    var bs2='{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://lucovista.netlify.app"},{"@type":"ListItem","position":2,"name":"'+h+'"}]}';
+    document.getElementById('faqSchema').textContent=fs;
+    document.getElementById('productSchema').textContent=ps;
+    document.getElementById('breadcrumbSchema').textContent=bs2;
+}
+
+function updateSliderBg(inpId, sldId){
+    var inp=document.getElementById(inpId),sld=document.getElementById(sldId);
+    if(!inp||!sld)return;
+    var v=parseFloat(inp.value)||0,mn=parseFloat(sld.min)||0,mx=parseFloat(sld.max)||100;
+    var pct=((v-mn)/(mx-mn))*100;
+    sld.style.background='linear-gradient(to right, var(--primary) 0%, var(--primary) '+pct+'%, var(--border) '+pct+'%, var(--border) 100%)';
+}
+function updateAllSliderBgs(){
+    updateSliderBg('loanAmount','amountSlider');
+    updateSliderBg('interestRate','rateSlider');
+    updateSliderBg('loanTenure','tenureSlider');
+}
+
+function emiChanged(){
+    updateAllSliderBgs();
+    updatePage();
+}
+
+// Setup all listeners
+(function(){
+    // EMI inputs
+    var la=document.getElementById('loanAmount'),as=document.getElementById('amountSlider');
+    var ir=document.getElementById('interestRate'),rs=document.getElementById('rateSlider');
+    var lt=document.getElementById('loanTenure'),ts=document.getElementById('tenureSlider');
+    la.addEventListener('input',function(){as.value=this.value;emiChanged();});
+    as.addEventListener('input',function(){la.value=this.value;emiChanged();});
+    ir.addEventListener('input',function(){rs.value=this.value;emiChanged();});
+    rs.addEventListener('input',function(){ir.value=this.value;emiChanged();});
+    lt.addEventListener('input',function(){ts.value=this.value;emiChanged();});
+    ts.addEventListener('input',function(){lt.value=this.value;emiChanged();});
+
+    // SIP inputs
+    ['sipAmount','sipRate','sipYears'].forEach(function(id){
+        var el=document.getElementById(id),sl=document.getElementById(id+'Slider');
+        if(!el||!sl)return;
+        function sync(){var v=parseFloat(el.value)||0,mn=parseFloat(sl.min)||0,mx=parseFloat(sl.max)||100;var p=((v-mn)/(mx-mn))*100;sl.value=v;sl.style.background='linear-gradient(to right, var(--primary) 0%, var(--primary) '+p+'%, var(--border) '+p+'%, var(--border) 100%)';updatePage();}
+        sync();
+        el.addEventListener('input',function(){sl.value=this.value;sync();});
+        sl.addEventListener('input',function(){el.value=this.value;sync();});
+    });
+
+    // Car inputs
+    ['carPrice','carDownPayment','carRate','carTenure'].forEach(function(id){
+        var el=document.getElementById(id);if(el)el.addEventListener('input',updatePage);
+    });
+
+    // Bank select
+    document.getElementById('bankSelect').addEventListener('change',function(){
+        if(this.value&&banks[this.value])window.location.href='/emi-calculator/bank/'+this.value+'/';
+    });
+
+    // Car select
+    document.getElementById('carModelSelect').addEventListener('change',function(){
+        if(this.value&&carModels[this.value])window.location.href='/car-loan/'+this.value+'/';
+    });
+
+    // Toggle
+    document.querySelectorAll('.calc-type-btn').forEach(function(b){
+        b.addEventListener('click',function(){
+            if(this.dataset.type==='emi')window.location.href='/emi-calculator/bank/sbi/';
+            else window.location.href='/sip-calculator/';
+        });
+    });
+
+    // FAQ
+    document.querySelectorAll('.faq-question').forEach(function(q){
+        q.addEventListener('click',function(){this.parentElement.classList.toggle('open');});
+    });
+
+    // Crypto
+    document.getElementById('cryptoAddress').addEventListener('click',copyCryptoAddress);
+
+    // Donation
+    document.querySelectorAll('.donation-option').forEach(function(b){
+        b.addEventListener('click',function(){
+            document.querySelectorAll('.donation-option').forEach(function(x){x.classList.remove('selected');});
+            this.classList.add('selected');
+        });
+    });
+})();
+
+// Static params from build script
+if(window.STATIC_PARAMS){window.history.replaceState({},'',window.location.pathname+'?'+window.STATIC_PARAMS);}
+
+// Init
+populateSelects();
+updatePage();
+updateAllSliderBgs();
+console.log('✅ LucoVista ready — EMI, SIP, Car calculators working');
+</script>
 </body>
 </html>
