@@ -1446,67 +1446,101 @@
             document.getElementById('productSchema').textContent = JSON.stringify(productSchema);
             document.getElementById('breadcrumbSchema').textContent = JSON.stringify(breadcrumbSchema);
         }
-
+         
         function setupListeners() {
-            const fields = [
-                { input: 'loanAmount', slider: 'amountSlider' },
-                { input: 'interestRate', slider: 'rateSlider' },
-                { input: 'loanTenure', slider: 'tenureSlider' }
-            ];
+    // EMI Calculator sliders
+    const fields = [
+        { input: 'loanAmount', slider: 'amountSlider' },
+        { input: 'interestRate', slider: 'rateSlider' },
+        { input: 'loanTenure', slider: 'tenureSlider' }
+    ];
 
-            fields.forEach(({ input, slider }) => {
-                const inp = document.getElementById(input);
-                const sld = document.getElementById(slider);
-                if (!inp || !sld) return;
-                inp.addEventListener('input', () => { sld.value = inp.value; updatePage(); });
-                sld.addEventListener('input', () => { inp.value = sld.value; updatePage(); });
-            });
+    fields.forEach(({ input, slider }) => {
+        const inp = document.getElementById(input);
+        const sld = document.getElementById(slider);
+        if (!inp || !sld) return;
 
-            document.getElementById('bankSelect')?.addEventListener('change', function() {
-                const val = this.value;
-                if (val && banks[val]) {
-                    window.location.href = '/emi-calculator/bank/' + val + '/';
-                }
-            });
-
-            document.getElementById('carModelSelect')?.addEventListener('change', function() {
-                const val = this.value;
-                if (val && carModels[val]) {
-                    window.location.href = '/car-loan/' + val + '/';
-                }
-            });
-
-            document.querySelectorAll('.calc-type-btn').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const type = this.dataset.type;
-                    if (type === 'emi') {
-                        window.location.href = '/emi-calculator/bank/sbi/';
-                    } else if (type === 'sip') {
-                        window.location.href = '/sip-calculator/';
-                    }
-                });
-            });
-
-            ['sipAmount', 'sipRate', 'sipYears'].forEach(id => {
-                const el = document.getElementById(id);
-                const slider = document.getElementById(id + 'Slider');
-                if (el && slider) {
-                    el.addEventListener('input', () => { slider.value = el.value; updatePage(); });
-                    slider.addEventListener('input', () => { el.value = slider.value; updatePage(); });
-                }
-            });
-
-            ['carPrice', 'carDownPayment', 'carRate', 'carTenure'].forEach(id => {
-                document.getElementById(id)?.addEventListener('input', updatePage);
-            });
-
-            document.querySelectorAll('.faq-question').forEach(q => {
-                q.addEventListener('click', () => q.parentElement.classList.toggle('open'));
-            });
-
-            document.getElementById('cryptoAddress')?.addEventListener('click', copyCryptoAddress);
+        function syncAndUpdate() {
+            const val = parseFloat(inp.value);
+            const min = parseFloat(sld.min);
+            const max = parseFloat(sld.max);
+            const pct = ((val - min) / (max - min)) * 100;
+            sld.value = val;
+            sld.style.background = `linear-gradient(to right, var(--primary) ${pct}%, var(--border) ${pct}%)`;
+            updatePage();
         }
 
+        inp.addEventListener('input', syncAndUpdate);
+        sld.addEventListener('input', function() {
+            inp.value = sld.value;
+            syncAndUpdate();
+        });
+    });
+
+    // Bank select
+    document.getElementById('bankSelect')?.addEventListener('change', function() {
+        const val = this.value;
+        if (val && banks[val]) {
+            window.location.href = '/emi-calculator/bank/' + val + '/';
+        }
+    });
+
+    // Car model select
+    document.getElementById('carModelSelect')?.addEventListener('change', function() {
+        const val = this.value;
+        if (val && carModels[val]) {
+            window.location.href = '/car-loan/' + val + '/';
+        }
+    });
+
+    // Calculator type toggle
+    document.querySelectorAll('.calc-type-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const type = this.dataset.type;
+            if (type === 'emi') {
+                window.location.href = '/emi-calculator/bank/sbi/';
+            } else if (type === 'sip') {
+                window.location.href = '/sip-calculator/';
+            }
+        });
+    });
+
+    // SIP Calculator sliders
+    ['sipAmount', 'sipRate', 'sipYears'].forEach(id => {
+        const el = document.getElementById(id);
+        const slider = document.getElementById(id + 'Slider');
+        if (el && slider) {
+            function syncSIP() {
+                const val = parseFloat(el.value);
+                const min = parseFloat(slider.min);
+                const max = parseFloat(slider.max);
+                const pct = ((val - min) / (max - min)) * 100;
+                slider.value = val;
+                slider.style.background = `linear-gradient(to right, var(--primary) ${pct}%, var(--border) ${pct}%)`;
+                updatePage();
+            }
+            el.addEventListener('input', syncSIP);
+            slider.addEventListener('input', function() {
+                el.value = slider.value;
+                syncSIP();
+            });
+        }
+    });
+
+    // Car calculator inputs
+    ['carPrice', 'carDownPayment', 'carRate', 'carTenure'].forEach(id => {
+        document.getElementById(id)?.addEventListener('input', updatePage);
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(q => {
+        q.addEventListener('click', () => q.parentElement.classList.toggle('open'));
+    });
+
+    // Crypto address copy
+    document.getElementById('cryptoAddress')?.addEventListener('click', copyCryptoAddress);
+}
+        
         // Check for static params from build script
         if (window.STATIC_PARAMS) {
             const newUrl = window.location.pathname + '?' + window.STATIC_PARAMS;
