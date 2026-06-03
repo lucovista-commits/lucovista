@@ -1604,9 +1604,18 @@
             return urls;
         }
 
-        // ============================================
-        // INITIALIZATION
-        // ============================================
+       // ============================================
+       // ============================================
+                  // INITIALIZATION
+                  // ============================================
+
+                // Check for static params injected by build script
+        if (window.STATIC_PARAMS) {
+                          // Convert "bank=sbi&city=mumbai" to proper URL
+                           const newUrl = window.location.pathname + '?' + window.STATIC_PARAMS;
+                            window.history.replaceState({}, '', newUrl);
+}
+
         populateBankSelect();
         populateCarSelect();
         updatePage();
