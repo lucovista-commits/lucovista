@@ -964,8 +964,8 @@
         <p>© 2025 <strong>LucoVista</strong> — India's Smartest Free Financial Calculator Platform</p>
         <p style="margin-top:4px;font-size:11px;">
             📧 support@lucovista.in | 
-            <a href="#">Privacy Policy</a> | 
-            <a href="#">Terms of Use</a> | 
+            Privacy Policy | 
+            Terms of Use | 
             Made with 💜 in India
         </p>
     </footer>
@@ -1124,6 +1124,7 @@
 
         function populateBankSelect() {
             const select = document.getElementById('bankSelect');
+            if (!select) return;
             const params = getParams();
             Object.keys(banks).forEach(key => {
                 const option = document.createElement('option');
@@ -1136,6 +1137,7 @@
 
         function populateCarSelect() {
             const select = document.getElementById('carModelSelect');
+            if (!select) return;
             const params = getParams();
             Object.keys(carModels).forEach(key => {
                 const option = document.createElement('option');
@@ -1155,48 +1157,91 @@
 
             const calcType = params.calculator || 'emi';
 
-            document.getElementById('emiCalculator').style.display = (calcType === 'sip' || calcType === 'car') ? 'none' : 'block';
-            document.getElementById('sipCalculator').style.display = calcType === 'sip' ? 'block' : 'none';
-            document.getElementById('carCalculator').style.display = calcType === 'car' ? 'block' : 'none';
-            document.getElementById('bankSelectGroup').style.display = calcType === 'car' ? 'none' : 'block';
-            document.getElementById('amortizationTable').style.display = calcType === 'sip' ? 'none' : 'block';
+            // Show/hide calculator sections safely
+            const emiDiv = document.getElementById('emiCalculator');
+            const sipDiv = document.getElementById('sipCalculator');
+            const carDiv = document.getElementById('carCalculator');
+            const bankSelectGroup = document.getElementById('bankSelectGroup');
+            const amortTable = document.getElementById('amortizationTable');
 
+            if (emiDiv) emiDiv.style.display = (calcType === 'emi') ? 'block' : 'none';
+            if (sipDiv) sipDiv.style.display = (calcType === 'sip') ? 'block' : 'none';
+            if (carDiv) carDiv.style.display = (calcType === 'car') ? 'block' : 'none';
+            if (bankSelectGroup) bankSelectGroup.style.display = (calcType === 'car') ? 'none' : 'block';
+            if (amortTable) amortTable.style.display = (calcType === 'sip') ? 'none' : 'block';
+
+            // Update nav active states
             document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-            if (calcType === 'sip') document.getElementById('navSip')?.classList.add('active');
-            else if (calcType === 'car') document.getElementById('navCar')?.classList.add('active');
-            else document.getElementById('navEmi')?.classList.add('active');
-
-            document.querySelectorAll('.calc-type-btn').forEach(b => b.classList.remove('active'));
             if (calcType === 'sip') {
-                document.querySelector('.calc-type-btn[data-type="sip"]')?.classList.add('active');
-                document.getElementById('calcTitle').textContent = '📈 SIP Calculator';
+                const navSip = document.getElementById('navSip');
+                if (navSip) navSip.classList.add('active');
+            } else if (calcType === 'car') {
+                const navCar = document.getElementById('navCar');
+                if (navCar) navCar.classList.add('active');
             } else {
-                document.querySelector('.calc-type-btn[data-type="emi"]')?.classList.add('active');
-                document.getElementById('calcTitle').textContent = calcType === 'car' ? '🚗 Car Loan EMI Calculator' : '📊 EMI Calculator';
+                const navEmi = document.getElementById('navEmi');
+                if (navEmi) navEmi.classList.add('active');
+            }
+
+            // Update calc type toggle
+            document.querySelectorAll('.calc-type-btn').forEach(b => b.classList.remove('active'));
+            const calcTitle = document.getElementById('calcTitle');
+            if (calcType === 'sip') {
+                const sipBtn = document.querySelector('.calc-type-btn[data-type="sip"]');
+                if (sipBtn) sipBtn.classList.add('active');
+                if (calcTitle) calcTitle.textContent = '📈 SIP Calculator';
+            } else {
+                const emiBtn = document.querySelector('.calc-type-btn[data-type="emi"]');
+                if (emiBtn) emiBtn.classList.add('active');
+                if (calcTitle) calcTitle.textContent = calcType === 'car' ? '🚗 Car Loan EMI Calculator' : '📊 EMI Calculator';
             }
 
             let loanAmount = params.amount || 2000000;
             let interestRate = params.rate || (bankData ? bankData.rate : 8.5);
             let tenure = params.tenure || 20;
 
-            if (calcType === 'car' && carData) {
-                loanAmount = carData.price - 200000;
-                interestRate = 9.5;
-                tenure = 5;
-                document.getElementById('carPrice').value = carData.price;
-                document.getElementById('carDownPayment').value = 200000;
-                document.getElementById('carRate').value = interestRate;
-                document.getElementById('carTenure').value = tenure;
+            // Set EMI values only when on EMI page
+            if (calcType === 'emi') {
+                const la = document.getElementById('loanAmount');
+                const as = document.getElementById('amountSlider');
+                const ir = document.getElementById('interestRate');
+                const rs = document.getElementById('rateSlider');
+                const lt = document.getElementById('loanTenure');
+                const ts = document.getElementById('tenureSlider');
+                const bs = document.getElementById('bankSelect');
+                
+                if (la) la.value = loanAmount;
+                if (as) as.value = loanAmount;
+                if (ir) ir.value = interestRate;
+                if (rs) rs.value = interestRate;
+                if (lt) lt.value = tenure;
+                if (ts) ts.value = tenure;
+                if (bs && bankData) bs.value = params.bank;
             }
 
-            document.getElementById('loanAmount').value = loanAmount;
-            document.getElementById('amountSlider').value = loanAmount;
-            document.getElementById('interestRate').value = interestRate;
-            document.getElementById('rateSlider').value = interestRate;
-            document.getElementById('loanTenure').value = tenure;
-            document.getElementById('tenureSlider').value = tenure;
-            if (bankData) document.getElementById('bankSelect').value = params.bank;
+            // Set Car values only when on Car page
+            if (calcType === 'car') {
+                const cp = document.getElementById('carPrice');
+                const cdp = document.getElementById('carDownPayment');
+                const cr = document.getElementById('carRate');
+                const ct = document.getElementById('carTenure');
+                
+                if (carData) {
+                    loanAmount = carData.price - 200000;
+                    interestRate = 9.5;
+                    tenure = 5;
+                    if (cp) cp.value = carData.price;
+                    if (cdp) cdp.value = 200000;
+                    if (cr) cr.value = interestRate;
+                    if (ct) ct.value = tenure;
+                } else {
+                    if (cp) loanAmount = parseInt(cp.value) - (parseInt(document.getElementById('carDownPayment')?.value) || 0);
+                    if (cr) interestRate = parseFloat(cr.value) || 9.5;
+                    if (ct) tenure = parseInt(ct.value) || 5;
+                }
+            }
 
+            // Build page title and meta
             let titleParts = [], headingText = '', subtitleText = '';
 
             if (calcType === 'sip') {
@@ -1219,7 +1264,7 @@
             } else if (bankData) {
                 titleParts = [`${bankData.name} EMI Calculator — Home, Car, Personal Loan`];
                 headingText = `${bankData.name} EMI Calculator`;
-                subtitleText = `Calculate ${bankData.full} loan EMI. Free calculator at ${bankData.rate}% rate.`;
+                subtitleText = `Calculate ${bankData.full} loan EMI at ${bankData.rate}% rate.`;
             } else if (cityName) {
                 titleParts = [`Home Loan EMI Calculator ${cityName} — Compare 50+ Banks`];
                 headingText = `Home Loan EMI Calculator — ${cityName}`;
@@ -1227,74 +1272,98 @@
             } else if (amountFormatted) {
                 titleParts = [`EMI Calculator for ${amountFormatted} Loan`];
                 headingText = `EMI Calculator for ${amountFormatted} Loan`;
-                subtitleText = `Calculate monthly EMI for ${amountFormatted} loan. Free, instant results.`;
+                subtitleText = `Calculate monthly EMI for ${amountFormatted} loan.`;
             } else {
                 titleParts = ['EMI Calculator India — Free Online Loan EMI Calculator'];
                 headingText = 'EMI Calculator India — Free Online Loan EMI Calculator 2025';
                 subtitleText = 'Calculate your EMI instantly. Compare 50+ Indian banks. Free, no sign-up.';
             }
 
+            // Set meta tags safely
             const fullTitle = titleParts.join(' | ') + ' | LucoVista';
             document.title = fullTitle;
-            document.getElementById('pageTitle').textContent = fullTitle;
-            document.getElementById('ogTitle').setAttribute('content', fullTitle);
-            document.getElementById('twitterTitle').setAttribute('content', fullTitle);
+            
+            const setContent = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+            const setAttr = (id, attr, val) => { const el = document.getElementById(id); if (el) el.setAttribute(attr, val); };
+            
+            setContent('pageTitle', fullTitle);
+            setAttr('ogTitle', 'content', fullTitle);
+            setAttr('twitterTitle', 'content', fullTitle);
 
             const metaDesc = subtitleText + ' LucoVista — India\'s most trusted free financial calculator.';
-            document.getElementById('metaDescription').setAttribute('content', metaDesc);
-            document.getElementById('ogDescription').setAttribute('content', metaDesc);
-            document.getElementById('twitterDescription').setAttribute('content', metaDesc);
+            setAttr('metaDescription', 'content', metaDesc);
+            setAttr('ogDescription', 'content', metaDesc);
+            setAttr('twitterDescription', 'content', metaDesc);
 
-            document.getElementById('pageHeading').textContent = headingText;
-            document.getElementById('pageSubtitle').textContent = subtitleText;
-            document.getElementById('breadcrumbText').textContent = headingText;
+            setContent('pageHeading', headingText);
+            setContent('pageSubtitle', subtitleText);
+            setContent('breadcrumbText', headingText);
 
+            // Update answer box
             if (bankData) {
-                document.getElementById('answerBox').innerHTML = `<strong>⚡ Quick Answer:</strong> ${bankData.full} offers loans at ${bankData.rate}% p.a. (approx). Use LucoVista's calculator to check your exact EMI. Rates depend on CIBIL score, income, and loan amount.`;
+                const answerBox = document.getElementById('answerBox');
+                if (answerBox) {
+                    answerBox.innerHTML = `<strong>⚡ Quick Answer:</strong> ${bankData.full} offers loans at ${bankData.rate}% p.a. (approx). Use LucoVista's calculator to check your exact EMI. Rates depend on CIBIL score, income, and loan amount.`;
+                }
             }
 
+            // Calculate results safely
             let result;
+            const mainResult = document.getElementById('mainResult');
+            const mainResultLabel = document.getElementById('mainResultLabel');
+            const detail1 = document.getElementById('detail1');
+            const detail2 = document.getElementById('detail2');
+            
             if (calcType === 'sip') {
                 const sipAmt = parseInt(document.getElementById('sipAmount')?.value) || 5000;
                 const sipR = parseFloat(document.getElementById('sipRate')?.value) || 12;
                 const sipY = parseInt(document.getElementById('sipYears')?.value) || 10;
                 result = calculateSIP(sipAmt, sipR, sipY);
-                document.getElementById('mainResult').textContent = formatCurrency(result.futureValue);
-                document.getElementById('mainResultLabel').textContent = 'Future Value';
-                document.getElementById('detail1').textContent = formatCurrency(result.totalInvested);
-                document.getElementById('detail1').parentElement.querySelector('.detail-label').textContent = 'Total Invested';
-                document.getElementById('detail2').textContent = formatCurrency(result.wealthGain);
-                document.getElementById('detail2').parentElement.querySelector('.detail-label').textContent = 'Wealth Gain';
-            } else if (calcType === 'car') {
-                const carPrice = parseInt(document.getElementById('carPrice')?.value) || 800000;
-                const downPayment = parseInt(document.getElementById('carDownPayment')?.value) || 200000;
-                const carR = parseFloat(document.getElementById('carRate')?.value) || 9.5;
-                const carY = parseInt(document.getElementById('carTenure')?.value) || 5;
-                result = calculateEMI(Math.max(0, carPrice - downPayment), carR, carY);
-                document.getElementById('mainResult').textContent = formatCurrency(result.emi);
-                document.getElementById('mainResultLabel').textContent = 'Monthly EMI';
-                document.getElementById('detail1').textContent = formatCurrency(result.totalInterest);
-                document.getElementById('detail1').parentElement.querySelector('.detail-label').textContent = 'Total Interest';
-                document.getElementById('detail2').textContent = formatCurrency(result.totalPayment);
-                document.getElementById('detail2').parentElement.querySelector('.detail-label').textContent = 'Total Payment';
+                if (mainResult) mainResult.textContent = formatCurrency(result.futureValue);
+                if (mainResultLabel) mainResultLabel.textContent = 'Future Value';
+                if (detail1) {
+                    detail1.textContent = formatCurrency(result.totalInvested);
+                    const d1Label = detail1.parentElement?.querySelector('.detail-label');
+                    if (d1Label) d1Label.textContent = 'Total Invested';
+                }
+                if (detail2) {
+                    detail2.textContent = formatCurrency(result.wealthGain);
+                    const d2Label = detail2.parentElement?.querySelector('.detail-label');
+                    if (d2Label) d2Label.textContent = 'Wealth Gain';
+                }
             } else {
                 result = calculateEMI(loanAmount, interestRate, tenure);
-                document.getElementById('mainResult').textContent = formatCurrency(result.emi);
-                document.getElementById('mainResultLabel').textContent = 'Monthly EMI';
-                document.getElementById('detail1').textContent = formatCurrency(result.totalInterest);
-                document.getElementById('detail1').parentElement.querySelector('.detail-label').textContent = 'Total Interest';
-                document.getElementById('detail2').textContent = formatCurrency(result.totalPayment);
-                document.getElementById('detail2').parentElement.querySelector('.detail-label').textContent = 'Total Payment';
+                if (mainResult) mainResult.textContent = formatCurrency(result.emi);
+                if (mainResultLabel) mainResultLabel.textContent = 'Monthly EMI';
+                if (detail1) {
+                    detail1.textContent = formatCurrency(result.totalInterest);
+                    const d1Label = detail1.parentElement?.querySelector('.detail-label');
+                    if (d1Label) d1Label.textContent = 'Total Interest';
+                }
+                if (detail2) {
+                    detail2.textContent = formatCurrency(result.totalPayment);
+                    const d2Label = detail2.parentElement?.querySelector('.detail-label');
+                    if (d2Label) d2Label.textContent = 'Total Payment';
+                }
 
-                const amortData = generateAmortization(loanAmount, interestRate, tenure);
-                document.getElementById('amortBody').innerHTML = amortData.map(d => 
-                    `<tr><td>Year ${d.year}</td><td>${formatCurrency(d.principalPaid)}</td><td>${formatCurrency(d.interestPaid)}</td><td>${formatCurrency(d.balance)}</td></tr>`
-                ).join('');
+                // Amortization only for EMI
+                if (calcType === 'emi') {
+                    const amortData = generateAmortization(loanAmount, interestRate, tenure);
+                    const amortBody = document.getElementById('amortBody');
+                    if (amortBody) {
+                        amortBody.innerHTML = amortData.map(d => 
+                            `<tr><td>Year ${d.year}</td><td>${formatCurrency(d.principalPaid)}</td><td>${formatCurrency(d.interestPaid)}</td><td>${formatCurrency(d.balance)}</td></tr>`
+                        ).join('');
+                    }
+                }
             }
 
+            // Update FAQ
             if (bankData) {
-                document.getElementById('faqBankQ').textContent = `What is the current ${bankData.full} interest rate?`;
-                document.getElementById('faqBankA').textContent = `${bankData.full} offers loans at approximately ${bankData.rate}% p.a. Exact rates depend on your CIBIL score, income stability, and loan amount.`;
+                const faqBankQ = document.getElementById('faqBankQ');
+                const faqBankA = document.getElementById('faqBankA');
+                if (faqBankQ) faqBankQ.textContent = `What is the current ${bankData.full} interest rate?`;
+                if (faqBankA) faqBankA.textContent = `${bankData.full} offers loans at approximately ${bankData.rate}% p.a. Exact rates depend on your CIBIL score, income stability, and loan amount.`;
             }
 
             updateRelatedLinks(params);
@@ -1304,6 +1373,8 @@
         function updateRelatedLinks(params) {
             const grid = document.getElementById('relatedLinksGrid');
             const sidebarBankLinks = document.getElementById('sidebarBankLinks');
+            if (!grid && !sidebarBankLinks) return;
+            
             let links = [];
 
             ['sbi', 'hdfc', 'icici', 'axis', 'pnb', 'kotak', 'bajaj', 'lic'].forEach(key => {
@@ -1331,17 +1402,19 @@
             if (params.calculator !== 'car') {
                 links.push('<a href="/car-loan/maruti-swift/" class="related-link">Car Loan EMI</a>');
                 ['maruti-swift', 'hyundai-creta', 'tata-nexon'].forEach(car => {
-                    links.push(`<a href="/car-loan/${car}/" class="related-link">${carModels[car].name} EMI</a>`);
+                    if (carModels[car]) links.push(`<a href="/car-loan/${car}/" class="related-link">${carModels[car].name} EMI</a>`);
                 });
             }
 
             links = links.sort(() => Math.random() - 0.5).slice(0, 24);
-            grid.innerHTML = links.join('');
+            if (grid) grid.innerHTML = links.join('');
 
-            let bankLinks = Object.keys(banks).slice(0, 10).map(key => 
-                `<a href="/emi-calculator/bank/${key}/" class="related-link" style="display:block;margin-bottom:6px;">🏦 ${banks[key].full} (${banks[key].rate}%)</a>`
-            ).join('');
-            sidebarBankLinks.innerHTML = bankLinks;
+            if (sidebarBankLinks) {
+                let bankLinks = Object.keys(banks).slice(0, 10).map(key => 
+                    `<a href="/emi-calculator/bank/${key}/" class="related-link" style="display:block;margin-bottom:6px;">🏦 ${banks[key].full} (${banks[key].rate}%)</a>`
+                ).join('');
+                sidebarBankLinks.innerHTML = bankLinks;
+            }
         }
 
         function updateSchema(headingText, bankData, cityName, calcType, interestRate) {
@@ -1372,7 +1445,7 @@
                 "@context": "https://schema.org",
                 "@type": "FinancialProduct",
                 "name": headingText,
-                "description": document.getElementById('metaDescription').getAttribute('content'),
+                "description": document.getElementById('metaDescription')?.getAttribute('content') || '',
                 "provider": { "@type": "Organization", "name": "LucoVista" },
                 "interestRate": { "@type": "QuantitativeValue", "value": interestRate, "unitText": "Percent" }
             };
@@ -1386,12 +1459,16 @@
                 ]
             };
 
-            document.getElementById('faqSchema').textContent = JSON.stringify(faqSchema);
-            document.getElementById('productSchema').textContent = JSON.stringify(productSchema);
-            document.getElementById('breadcrumbSchema').textContent = JSON.stringify(breadcrumbSchema);
+            const faqEl = document.getElementById('faqSchema');
+            const prodEl = document.getElementById('productSchema');
+            const breadEl = document.getElementById('breadcrumbSchema');
+            if (faqEl) faqEl.textContent = JSON.stringify(faqSchema);
+            if (prodEl) prodEl.textContent = JSON.stringify(productSchema);
+            if (breadEl) breadEl.textContent = JSON.stringify(breadcrumbSchema);
         }
 
         function setupListeners() {
+            // EMI sliders - only work when visible
             const fields = [
                 { input: 'loanAmount', slider: 'amountSlider' },
                 { input: 'interestRate', slider: 'rateSlider' },
@@ -1404,6 +1481,7 @@
                 if (!inp || !sld) return;
 
                 function syncAndUpdate() {
+                    if (inp.offsetParent === null) return;
                     const val = parseFloat(inp.value);
                     const min = parseFloat(sld.min);
                     const max = parseFloat(sld.max);
@@ -1422,6 +1500,7 @@
                 });
             });
 
+            // Bank select
             document.getElementById('bankSelect')?.addEventListener('change', function() {
                 const val = this.value;
                 if (val && banks[val]) {
@@ -1429,6 +1508,7 @@
                 }
             });
 
+            // Car model select
             document.getElementById('carModelSelect')?.addEventListener('change', function() {
                 const val = this.value;
                 if (val && carModels[val]) {
@@ -1436,6 +1516,7 @@
                 }
             });
 
+            // Calculator type toggle
             document.querySelectorAll('.calc-type-btn').forEach(btn => {
                 btn.addEventListener('click', function() {
                     const type = this.dataset.type;
@@ -1447,11 +1528,13 @@
                 });
             });
 
+            // SIP sliders
             ['sipAmount', 'sipRate', 'sipYears'].forEach(id => {
                 const el = document.getElementById(id);
                 const slider = document.getElementById(id + 'Slider');
                 if (el && slider) {
                     function syncSIP() {
+                        if (el.offsetParent === null) return;
                         const val = parseFloat(el.value);
                         const min = parseFloat(slider.min);
                         const max = parseFloat(slider.max);
@@ -1469,16 +1552,21 @@
                 }
             });
 
+            // Car inputs
             ['carPrice', 'carDownPayment', 'carRate', 'carTenure'].forEach(id => {
-                document.getElementById(id)?.addEventListener('input', updatePage);
+                const el = document.getElementById(id);
+                if (el) el.addEventListener('input', updatePage);
             });
 
+            // FAQ accordion
             document.querySelectorAll('.faq-question').forEach(q => {
                 q.addEventListener('click', () => q.parentElement.classList.toggle('open'));
             });
 
+            // Crypto address copy
             document.getElementById('cryptoAddress')?.addEventListener('click', copyCryptoAddress);
 
+            // Donation options
             document.querySelectorAll('.donation-option').forEach(btn => {
                 btn.addEventListener('click', function() {
                     document.querySelectorAll('.donation-option').forEach(b => b.classList.remove('selected'));
@@ -1493,7 +1581,7 @@
             window.history.replaceState({}, '', newUrl);
         }
 
-        // Initialize
+        // Initialize everything
         populateBankSelect();
         populateCarSelect();
         updatePage();
@@ -1501,8 +1589,8 @@
 
         // Random social proof
         const supporterCount = 250 + Math.floor(Math.random() * 30);
-        document.getElementById('donationSocialProof').textContent = 
-            `💜 Join ${supporterCount}+ smart Indians who support free financial tools!`;
+        const socialProof = document.getElementById('donationSocialProof');
+        if (socialProof) socialProof.textContent = `💜 Join ${supporterCount}+ smart Indians who support free financial tools!`;
 
         console.log('✅ LucoVista initialized successfully');
         console.log('📊 118 programmatic pages ready for indexing');
