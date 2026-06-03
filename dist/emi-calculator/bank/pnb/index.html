@@ -18,7 +18,6 @@
     <meta name="twitter:description" id="twitterDescription" content="Free EMI calculator. Compare 50+ Indian banks instantly.">
     <link rel="canonical" id="canonicalUrl" href="https://lucovista.in/emi-calculator">
     
-    <!-- Schema Markup -->
     <script type="application/ld+json" id="faqSchema"></script>
     <script type="application/ld+json" id="productSchema"></script>
     <script type="application/ld+json" id="breadcrumbSchema"></script>
@@ -71,7 +70,6 @@
             min-height: 100vh;
         }
 
-        /* ============ TOP BANNER AD ============ */
         .top-banner-ad {
             width: 100%;
             background: linear-gradient(135deg, #fff9e6, #fff3cd);
@@ -104,7 +102,6 @@
             margin: 0 auto;
         }
 
-        /* ============ NAVIGATION ============ */
         .nav-bar {
             background: var(--card);
             border-bottom: 1px solid var(--border);
@@ -131,6 +128,7 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             letter-spacing: -0.5px;
+            text-decoration: none;
         }
         .logo-icon {
             font-size: 30px;
@@ -156,7 +154,6 @@
             color: white;
         }
 
-        /* ============ MAIN CONTAINER ============ */
         .main-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -169,7 +166,6 @@
             .main-container { grid-template-columns: 1fr; }
         }
 
-        /* ============ CONTENT AREA ============ */
         .content-area {
             display: flex;
             flex-direction: column;
@@ -199,7 +195,6 @@
             margin-top: 4px;
         }
 
-        /* Answer Box for AI Overviews */
         .answer-box {
             background: linear-gradient(135deg, #f0f0ff, #e8e8ff);
             border-left: 4px solid var(--primary);
@@ -210,7 +205,6 @@
         }
         .answer-box strong { color: var(--primary); }
 
-        /* Calculator Card */
         .calculator-card {
             background: var(--card);
             border-radius: var(--radius);
@@ -319,7 +313,6 @@
             margin-top: 4px;
         }
 
-        /* Result Box */
         .result-box {
             background: linear-gradient(135deg, #6c5ce7, #5a4bd1, #4a3db5);
             border-radius: var(--radius);
@@ -353,7 +346,6 @@
         .detail-value { font-size: 22px; font-weight: 700; }
         .detail-label { font-size: 12px; opacity: 0.8; }
 
-        /* Amortization Table */
         .amortization-table {
             width: 100%;
             border-collapse: collapse;
@@ -382,7 +374,6 @@
             border: 1px solid var(--border);
         }
 
-        /* FAQ Section */
         .faq-section {
             background: var(--card);
             border-radius: var(--radius);
@@ -421,7 +412,6 @@
         }
         .faq-item.open .faq-question::after { content: '−'; }
 
-        /* Related Section */
         .related-section {
             background: var(--card);
             border-radius: var(--radius);
@@ -453,7 +443,6 @@
             border-color: var(--primary);
         }
 
-        /* ============ SIDEBAR ============ */
         .sidebar {
             display: flex;
             flex-direction: column;
@@ -493,7 +482,6 @@
             color: var(--text-lighter);
         }
 
-        /* ============ DONATION BOX ============ */
         .donation-box {
             background: linear-gradient(135deg, #2d3436, #1a1a2e);
             border-radius: var(--radius);
@@ -598,7 +586,6 @@
             border-color: var(--gold);
         }
 
-        /* ============ BOTTOM AD ============ */
         .bottom-ad {
             background: var(--card);
             border-radius: var(--radius);
@@ -628,7 +615,6 @@
             margin: 0 auto;
         }
 
-        /* ============ FOOTER ============ */
         .footer {
             text-align: center;
             padding: 30px 20px;
@@ -640,7 +626,6 @@
         }
         .footer a { color: var(--primary); text-decoration: none; }
 
-        /* Toast notification */
         .toast {
             position: fixed;
             bottom: 30px;
@@ -668,54 +653,45 @@
     </script></head>
 <body>
 
-    <!-- TOP BANNER AD (Adsterra 728x90) -->
     <div class="top-banner-ad">
         <div class="ad-label">📢 Sponsored</div>
         <div class="ad-placeholder" id="adsterra-top-banner">
-            <!-- Adsterra Ad Code Here -->
             🔳 Adsterra Banner Ad (728×90) — Replace with your Adsterra code
         </div>
     </div>
 
-    <!-- NAVIGATION -->
     <nav class="nav-bar">
         <div class="nav-container">
-            <div class="logo">
+            <a href="/" class="logo">
                 <span class="logo-icon">🔮</span>LucoVista
-            </div>
+            </a>
             <div class="nav-links">
-                <a href="?calculator=emi" class="nav-link active" id="navEmi">EMI Calculator</a>
-                <a href="?calculator=sip" class="nav-link" id="navSip">SIP Calculator</a>
-                <a href="?calculator=emi&bank=sbi" class="nav-link">SBI EMI</a>
-                <a href="?calculator=emi&bank=hdfc" class="nav-link">HDFC EMI</a>
-                <a href="?calculator=emi&amount=5000000" class="nav-link">₹50L EMI</a>
-                <a href="?calculator=car" class="nav-link" id="navCar">Car Loan</a>
+                <a href="/emi-calculator/bank/sbi/" class="nav-link active" id="navEmi">EMI Calculator</a>
+                <a href="/sip-calculator/" class="nav-link" id="navSip">SIP Calculator</a>
+                <a href="/emi-calculator/bank/sbi/" class="nav-link">SBI EMI</a>
+                <a href="/emi-calculator/bank/hdfc/" class="nav-link">HDFC EMI</a>
+                <a href="/emi-calculator/amount/5000000/" class="nav-link">₹50L EMI</a>
+                <a href="/car-loan/maruti-swift/" class="nav-link" id="navCar">Car Loan</a>
             </div>
         </div>
     </nav>
 
-    <!-- MAIN CONTENT -->
     <div class="main-container">
         
-        <!-- CONTENT AREA -->
         <div class="content-area">
             
-            <!-- Breadcrumb -->
             <div class="breadcrumb">
                 <a href="/">🏠 Home</a> › <span id="breadcrumbText">EMI Calculator</span>
             </div>
 
-            <!-- Page Heading -->
             <h1 id="pageHeading">EMI Calculator India — Free Online Loan EMI Calculator 2025</h1>
             <p class="subtitle" id="pageSubtitle">Calculate your monthly EMI instantly. Compare 50+ Indian banks. Free, no sign-up required. Trusted by thousands of Indians.</p>
 
-            <!-- AI Answer Box -->
             <div class="answer-box" id="answerBox">
                 <strong>⚡ Quick Answer:</strong> Use LucoVista's free EMI calculator to find your exact monthly payment. 
                 Enter your loan amount, interest rate, and tenure. We support 50+ Indian banks with real-time rate comparisons.
             </div>
 
-            <!-- Calculator Card -->
             <div class="calculator-card" id="calculatorCard">
                 <div class="calc-header">
                     <h2 id="calcTitle">📊 EMI Calculator</h2>
@@ -725,7 +701,6 @@
                     </div>
                 </div>
 
-                <!-- Calculator Type: EMI or SIP will be shown/hidden -->
                 <div id="emiCalculator">
                     <div class="input-group">
                         <label>💰 Loan Amount</label>
@@ -767,7 +742,6 @@
                     </div>
                 </div>
 
-                <!-- SIP Calculator (hidden by default) -->
                 <div id="sipCalculator" style="display:none;">
                     <div class="input-group">
                         <label>💰 Monthly Investment</label>
@@ -798,7 +772,6 @@
                     </div>
                 </div>
 
-                <!-- Car Loan Calculator (hidden by default) -->
                 <div id="carCalculator" style="display:none;">
                     <div class="input-group">
                         <label>🚗 Select Car Model</label>
@@ -838,7 +811,6 @@
                     </div>
                 </div>
 
-                <!-- Result Box -->
                 <div class="result-box" id="resultBox">
                     <div class="result-emi" id="mainResult">₹17,361</div>
                     <div class="result-label" id="mainResultLabel">Monthly EMI</div>
@@ -854,7 +826,6 @@
                     </div>
                 </div>
 
-                <!-- Amortization Table -->
                 <div class="table-scroll" id="amortizationTable" style="margin-top:20px;">
                     <table class="amortization-table">
                         <thead>
@@ -865,7 +836,6 @@
                 </div>
             </div>
 
-            <!-- MID-CONTENT AD -->
             <div class="sidebar-ad" style="max-width:100%;">
                 <div class="ad-label">📢 Sponsored</div>
                 <div class="ad-placeholder" id="adsterra-mid-banner">
@@ -873,7 +843,6 @@
                 </div>
             </div>
 
-            <!-- FAQ Section -->
             <div class="faq-section" id="faqSection">
                 <h2>❓ Frequently Asked Questions</h2>
                 <div id="faqContainer">
@@ -896,13 +865,11 @@
                 </div>
             </div>
 
-            <!-- Related Calculators -->
             <div class="related-section">
                 <h2>🔗 Related Calculators & Pages</h2>
                 <div class="related-grid" id="relatedLinksGrid"></div>
             </div>
 
-            <!-- BOTTOM AD -->
             <div class="bottom-ad">
                 <div class="ad-label">📢 Sponsored</div>
                 <div class="ad-placeholder" id="adsterra-bottom-banner">
@@ -911,10 +878,8 @@
             </div>
         </div>
 
-        <!-- ============ SIDEBAR ============ -->
         <aside class="sidebar">
             
-            <!-- SIDEBAR AD 1 -->
             <div class="sidebar-ad">
                 <div class="ad-label">📢 Sponsored</div>
                 <div class="ad-placeholder" id="adsterra-sidebar-1">
@@ -922,7 +887,6 @@
                 </div>
             </div>
 
-            <!-- DONATION BOX -->
             <div class="donation-box" id="donationBox">
                 <div class="donation-icon">💜</div>
                 <h3>Support LucoVista</h3>
@@ -950,7 +914,6 @@
                 </p>
             </div>
 
-            <!-- SIDEBAR AD 2 -->
             <div class="sidebar-ad">
                 <div class="ad-label">📢 Sponsored</div>
                 <div class="ad-placeholder" id="adsterra-sidebar-2">
@@ -958,7 +921,6 @@
                 </div>
             </div>
 
-            <!-- Quick Bank Links -->
             <div class="related-section" style="padding:20px;">
                 <h3 style="font-size:16px;margin-bottom:12px;">🏦 Top Bank EMI Calculators</h3>
                 <div class="related-grid" style="grid-template-columns:1fr;" id="sidebarBankLinks"></div>
@@ -966,7 +928,6 @@
         </aside>
     </div>
 
-    <!-- FOOTER -->
     <footer class="footer">
         <p>© 2025 <strong>LucoVista</strong> — India's Smartest Free Financial Calculator Platform</p>
         <p style="margin-top:6px;font-size:12px;">
@@ -977,7 +938,6 @@
         </p>
     </footer>
 
-    <!-- Toast Notification -->
     <div class="toast" id="toast">✅ Address copied! Thank you for supporting LucoVista 💜</div>
 
     <script>
@@ -985,7 +945,6 @@
         // COMPLETE DATA: 50+ BANKS, 500+ AMOUNTS, 20+ CARS
         // ============================================
 
-        // 50+ Banks/NBFCs with real approximate rates (as of 2025)
         const banks = {
             sbi: { name: 'SBI', full: 'State Bank of India', rate: 8.50, type: 'PSU' },
             hdfc: { name: 'HDFC', full: 'HDFC Bank', rate: 8.60, type: 'Private' },
@@ -1041,18 +1000,15 @@
             jk: { name: 'J&K Bank', full: 'Jammu & Kashmir Bank', rate: 8.60, type: 'PSU' }
         };
 
-        // Cities
         const cities = ['Mumbai', 'Delhi', 'Bangalore', 'Chennai', 'Hyderabad', 'Pune', 'Kolkata', 'Ahmedabad', 
                        'Jaipur', 'Lucknow', 'Indore', 'Bhopal', 'Chandigarh', 'Surat', 'Nagpur', 'Visakhapatnam',
                        'Coimbatore', 'Kochi', 'Bhubaneswar', 'Guwahati'];
 
-        // Generate 500+ loan amounts (₹1L to ₹5Cr, every ₹1L)
         const allLoanAmounts = [];
         for (let amt = 100000; amt <= 50000000; amt += 100000) {
             allLoanAmounts.push(amt);
         }
 
-        // 20+ Car Models with approximate on-road prices
         const carModels = {
             'maruti-swift': { name: 'Maruti Swift', price: 750000, brand: 'Maruti Suzuki' },
             'maruti-baleno': { name: 'Maruti Baleno', price: 900000, brand: 'Maruti Suzuki' },
@@ -1081,9 +1037,6 @@
             'mg-astor': { name: 'MG Astor', price: 1300000, brand: 'MG' }
         };
 
-        // ============================================
-        // UTILITY FUNCTIONS
-        // ============================================
         function formatIndianNumber(num) {
             if (num >= 10000000) return '₹' + (num / 10000000).toFixed(num % 10000000 === 0 ? 0 : 1) + ' Crore';
             if (num >= 100000) return '₹' + (num / 100000).toFixed(num % 100000 === 0 ? 0 : 1) + ' Lakh';
@@ -1095,17 +1048,48 @@
         }
 
         function getParams() {
-            const params = new URLSearchParams(window.location.search);
-            return {
-                calculator: params.get('calculator') || 'emi',
-                bank: params.get('bank')?.toLowerCase() || '',
-                amount: parseInt(params.get('amount')) || 0,
-                city: params.get('city')?.toLowerCase() || '',
-                rate: parseFloat(params.get('rate')) || 0,
-                tenure: parseInt(params.get('tenure')) || 0,
-                car: params.get('car')?.toLowerCase() || '',
-                sip: params.get('sip') || ''
+            const urlPath = window.location.pathname;
+            const queryParams = new URLSearchParams(window.location.search);
+            
+            let params = {
+                calculator: queryParams.get('calculator') || 'emi',
+                bank: queryParams.get('bank') || '',
+                amount: parseInt(queryParams.get('amount')) || 0,
+                city: queryParams.get('city') || '',
+                rate: parseFloat(queryParams.get('rate')) || 0,
+                tenure: parseInt(queryParams.get('tenure')) || 0,
+                car: queryParams.get('car') || '',
+                sip: queryParams.get('sip') || ''
             };
+
+            // Parse folder-based URL structure
+            const pathParts = urlPath.replace(/\/$/, '').split('/').filter(p => p);
+            
+            if (pathParts.includes('sip-calculator')) {
+                params.calculator = 'sip';
+            }
+            if (pathParts.includes('car-loan')) {
+                params.calculator = 'car';
+                const carIndex = pathParts.indexOf('car-loan') + 1;
+                if (pathParts[carIndex]) params.car = pathParts[carIndex];
+            }
+            if (pathParts.includes('bank')) {
+                const bankIndex = pathParts.indexOf('bank') + 1;
+                if (pathParts[bankIndex]) params.bank = pathParts[bankIndex];
+            }
+            if (pathParts.includes('city')) {
+                const cityIndex = pathParts.indexOf('city') + 1;
+                if (pathParts[cityIndex]) params.city = pathParts[cityIndex];
+            }
+            if (pathParts.includes('amount')) {
+                const amtIndex = pathParts.indexOf('amount') + 1;
+                if (pathParts[amtIndex]) params.amount = parseInt(pathParts[amtIndex]);
+            }
+            if (pathParts.includes('emi-calculator') && pathParts.length === 2) {
+                params.calculator = 'emi';
+            }
+
+            return params;
         }
 
         function calculateEMI(principal, annualRate, years) {
@@ -1145,9 +1129,6 @@
             return yearlyData;
         }
 
-        // ============================================
-        // CRYPTO DONATION
-        // ============================================
         function copyCryptoAddress() {
             const addr = document.getElementById('cryptoAddress').textContent.trim();
             navigator.clipboard.writeText(addr).then(() => {
@@ -1162,7 +1143,6 @@
             setTimeout(() => { toast.classList.remove('show'); }, 3000);
         }
 
-        // Donation option buttons
         document.querySelectorAll('.donation-option').forEach(btn => {
             btn.addEventListener('click', function() {
                 document.querySelectorAll('.donation-option').forEach(b => b.classList.remove('selected'));
@@ -1171,20 +1151,15 @@
                 if (amount === '0') {
                     showToast('💝 Any amount is appreciated! Send any amount to the wallet address below. Thank you! 🙏');
                 } else {
-                    const cryptoAddr = document.getElementById('cryptoAddress').textContent.trim();
                     showToast(`💜 Thank you! Send approximately $${amount} in crypto to the address below. You're awesome! 🌟`);
                 }
             });
         });
 
-        // Random social proof updater
         const supporterCount = 237 + Math.floor(Math.random() * 50);
         document.getElementById('donationSocialProof').textContent = 
             `💜 Join ${supporterCount}+ smart Indians who support free financial tools!`;
 
-        // ============================================
-        // POPULATE BANKS & CARS IN SELECT DROPDOWNS
-        // ============================================
         function populateBankSelect() {
             const select = document.getElementById('bankSelect');
             const params = getParams();
@@ -1209,9 +1184,6 @@
             });
         }
 
-        // ============================================
-        // MAIN UPDATE FUNCTION
-        // ============================================
         function updatePage() {
             const params = getParams();
             let bankData = params.bank && banks[params.bank] ? banks[params.bank] : null;
@@ -1219,42 +1191,34 @@
             let amountFormatted = params.amount >= 100000 ? formatIndianNumber(params.amount) : '';
             let carData = params.car && carModels[params.car] ? carModels[params.car] : null;
 
-            // Determine calculator type
             const calcType = params.calculator || 'emi';
 
-            // Show/hide calculator sections
-            document.getElementById('emiCalculator').style.display = calcType === 'sip' ? 'none' : (calcType === 'car' ? 'none' : 'block');
+            document.getElementById('emiCalculator').style.display = (calcType === 'sip' || calcType === 'car') ? 'none' : 'block';
             document.getElementById('sipCalculator').style.display = calcType === 'sip' ? 'block' : 'none';
             document.getElementById('carCalculator').style.display = calcType === 'car' ? 'block' : 'none';
             document.getElementById('bankSelectGroup').style.display = calcType === 'car' ? 'none' : 'block';
             document.getElementById('amortizationTable').style.display = calcType === 'sip' ? 'none' : 'block';
 
-            // Update nav active states
             document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
             if (calcType === 'sip') document.getElementById('navSip')?.classList.add('active');
             else if (calcType === 'car') document.getElementById('navCar')?.classList.add('active');
             else document.getElementById('navEmi')?.classList.add('active');
 
-            // Update calc type toggle
             document.querySelectorAll('.calc-type-btn').forEach(b => b.classList.remove('active'));
             if (calcType === 'sip') {
                 document.querySelector('.calc-type-btn[data-type="sip"]')?.classList.add('active');
                 document.getElementById('calcTitle').textContent = '📈 SIP Calculator';
-            } else if (calcType === 'car') {
-                document.querySelector('.calc-type-btn[data-type="emi"]')?.classList.add('active');
-                document.getElementById('calcTitle').textContent = '🚗 Car Loan EMI Calculator';
             } else {
                 document.querySelector('.calc-type-btn[data-type="emi"]')?.classList.add('active');
-                document.getElementById('calcTitle').textContent = '📊 EMI Calculator';
+                document.getElementById('calcTitle').textContent = calcType === 'car' ? '🚗 Car Loan EMI Calculator' : '📊 EMI Calculator';
             }
 
-            // Set default values
             let loanAmount = params.amount || 2000000;
             let interestRate = params.rate || (bankData ? bankData.rate : 8.5);
             let tenure = params.tenure || 20;
 
             if (calcType === 'car' && carData) {
-                loanAmount = carData.price - 200000; // Default 2L down payment
+                loanAmount = carData.price - 200000;
                 interestRate = 9.5;
                 tenure = 5;
                 document.getElementById('carPrice').value = carData.price;
@@ -1263,7 +1227,6 @@
                 document.getElementById('carTenure').value = tenure;
             }
 
-            // Set form values
             document.getElementById('loanAmount').value = loanAmount;
             document.getElementById('amountSlider').value = loanAmount;
             document.getElementById('interestRate').value = interestRate;
@@ -1272,7 +1235,6 @@
             document.getElementById('tenureSlider').value = tenure;
             if (bankData) document.getElementById('bankSelect').value = params.bank;
 
-            // Build SEO
             let titleParts = [], headingText = '', subtitleText = '';
 
             if (calcType === 'sip') {
@@ -1341,12 +1303,10 @@
             document.getElementById('pageSubtitle').textContent = subtitleText;
             document.getElementById('breadcrumbText').textContent = headingText;
 
-            // Update answer box
             if (bankData) {
                 document.getElementById('answerBox').innerHTML = `<strong>⚡ Quick Answer:</strong> ${bankData.full} offers loans at ${bankData.rate}% p.a. (approx). Use LucoVista's calculator to check your exact EMI. Rates depend on CIBIL score, income, and loan amount.`;
             }
 
-            // Calculate results
             let result;
             if (calcType === 'sip') {
                 const sipAmt = parseInt(document.getElementById('sipAmount')?.value) || 5000;
@@ -1359,6 +1319,19 @@
                 document.getElementById('detail1').parentElement.querySelector('.detail-label').textContent = 'Total Invested';
                 document.getElementById('detail2').textContent = formatCurrency(result.wealthGain);
                 document.getElementById('detail2').parentElement.querySelector('.detail-label').textContent = 'Wealth Gain';
+            } else if (calcType === 'car') {
+                const carPrice = parseInt(document.getElementById('carPrice')?.value) || 800000;
+                const downPayment = parseInt(document.getElementById('carDownPayment')?.value) || 200000;
+                const carR = parseFloat(document.getElementById('carRate')?.value) || 9.5;
+                const carY = parseInt(document.getElementById('carTenure')?.value) || 5;
+                const carLoan = Math.max(0, carPrice - downPayment);
+                result = calculateEMI(carLoan, carR, carY);
+                document.getElementById('mainResult').textContent = formatCurrency(result.emi);
+                document.getElementById('mainResultLabel').textContent = 'Monthly EMI';
+                document.getElementById('detail1').textContent = formatCurrency(result.totalInterest);
+                document.getElementById('detail1').parentElement.querySelector('.detail-label').textContent = 'Total Interest';
+                document.getElementById('detail2').textContent = formatCurrency(result.totalPayment);
+                document.getElementById('detail2').parentElement.querySelector('.detail-label').textContent = 'Total Payment';
             } else {
                 result = calculateEMI(loanAmount, interestRate, tenure);
                 document.getElementById('mainResult').textContent = formatCurrency(result.emi);
@@ -1368,7 +1341,6 @@
                 document.getElementById('detail2').textContent = formatCurrency(result.totalPayment);
                 document.getElementById('detail2').parentElement.querySelector('.detail-label').textContent = 'Total Payment';
 
-                // Amortization
                 const amortData = generateAmortization(loanAmount, interestRate, tenure);
                 const tbody = document.getElementById('amortBody');
                 tbody.innerHTML = amortData.map(d => 
@@ -1376,34 +1348,13 @@
                 ).join('');
             }
 
-            // Update FAQ
             if (bankData) {
                 document.getElementById('faqBankQ').textContent = `What is the current ${bankData.full} interest rate?`;
                 document.getElementById('faqBankA').textContent = `${bankData.full} offers loans at approximately ${bankData.rate}% p.a. Exact rates depend on your CIBIL score, income stability, and loan amount. Use our calculator to estimate your EMI.`;
             }
 
-            // Update related links
             updateRelatedLinks(params);
-
-            // Update schema
             updateSchema(headingText, bankData, cityName, calcType, loanAmount, interestRate, tenure, result);
-
-            // Update URL
-            const newParams = new URLSearchParams();
-            if (params.calculator && params.calculator !== 'emi') newParams.set('calculator', params.calculator);
-            if (params.bank) newParams.set('bank', params.bank);
-            if (params.amount) newParams.set('amount', params.amount);
-            if (params.city) newParams.set('city', params.city);
-            if (params.car) newParams.set('car', params.car);
-            const newSearch = newParams.toString();
-            const newUrl = window.location.pathname + (newSearch ? '?' + newSearch : '');
-            if (window.location.search !== (newSearch ? '?' + newSearch : '')) {
-                window.history.replaceState({}, '', newUrl);
-            }
-
-            // Update canonical
-            document.getElementById('canonicalUrl').setAttribute('href', 'https://lucovista.in/emi-calculator' + (newSearch ? '?' + newSearch : ''));
-            document.getElementById('ogUrl').setAttribute('content', 'https://lucovista.in/emi-calculator' + (newSearch ? '?' + newSearch : ''));
         }
 
         function updateRelatedLinks(params) {
@@ -1411,47 +1362,40 @@
             const sidebarBankLinks = document.getElementById('sidebarBankLinks');
             let links = [];
 
-            // Top banks
             ['sbi', 'hdfc', 'icici', 'axis', 'pnb', 'kotak', 'bajaj', 'lic'].forEach(key => {
                 if (params.bank !== key && banks[key]) {
-                    links.push(`<a href="?bank=${key}" class="related-link">${banks[key].name} EMI</a>`);
+                    links.push(`<a href="/emi-calculator/bank/${key}/" class="related-link">${banks[key].name} EMI</a>`);
                 }
             });
 
-            // Popular amounts
             [500000, 1000000, 2000000, 5000000, 10000000, 20000000].forEach(amt => {
                 if (params.amount !== amt) {
-                    links.push(`<a href="?amount=${amt}" class="related-link">${formatIndianNumber(amt)} EMI</a>`);
+                    links.push(`<a href="/emi-calculator/amount/${amt}/" class="related-link">${formatIndianNumber(amt)} EMI</a>`);
                 }
             });
 
-            // Cities
-            cities.slice(0, 8).forEach(city => {
-                if (params.city !== city.toLowerCase()) {
-                    links.push(`<a href="?city=${city.toLowerCase()}" class="related-link">${city} EMI</a>`);
+            ['mumbai', 'delhi', 'bangalore', 'chennai', 'hyderabad', 'pune', 'kolkata', 'ahmedabad'].forEach(city => {
+                if (params.city !== city) {
+                    links.push(`<a href="/emi-calculator/city/${city}/" class="related-link">${city.charAt(0).toUpperCase()+city.slice(1)} EMI</a>`);
                 }
             });
 
-            // SIP
             if (params.calculator !== 'sip') {
-                links.push('<a href="?calculator=sip" class="related-link">SIP Calculator</a>');
+                links.push('<a href="/sip-calculator/" class="related-link">SIP Calculator</a>');
             }
 
-            // Car loans
             if (params.calculator !== 'car') {
-                links.push('<a href="?calculator=car" class="related-link">Car Loan EMI</a>');
+                links.push('<a href="/car-loan/maruti-swift/" class="related-link">Car Loan EMI</a>');
                 ['maruti-swift', 'hyundai-creta', 'tata-nexon'].forEach(car => {
-                    links.push(`<a href="?calculator=car&car=${car}" class="related-link">${carModels[car].name} EMI</a>`);
+                    links.push(`<a href="/car-loan/${car}/" class="related-link">${carModels[car].name} EMI</a>`);
                 });
             }
 
-            // Shuffle and limit
             links = links.sort(() => Math.random() - 0.5).slice(0, 24);
             grid.innerHTML = links.join('');
 
-            // Sidebar bank quick links
             let bankLinks = Object.keys(banks).slice(0, 10).map(key => 
-                `<a href="?bank=${key}" class="related-link" style="display:block;margin-bottom:6px;">🏦 ${banks[key].full} (${banks[key].rate}%)</a>`
+                `<a href="/emi-calculator/bank/${key}/" class="related-link" style="display:block;margin-bottom:6px;">🏦 ${banks[key].full} (${banks[key].rate}%)</a>`
             ).join('');
             sidebarBankLinks.innerHTML = bankLinks;
         }
@@ -1503,11 +1447,7 @@
             document.getElementById('breadcrumbSchema').textContent = JSON.stringify(breadcrumbSchema);
         }
 
-        // ============================================
-        // EVENT LISTENERS
-        // ============================================
         function setupListeners() {
-            // EMI Calculator sync
             const fields = [
                 { input: 'loanAmount', slider: 'amountSlider' },
                 { input: 'interestRate', slider: 'rateSlider' },
@@ -1522,45 +1462,31 @@
                 sld.addEventListener('input', () => { inp.value = sld.value; updatePage(); });
             });
 
-            // Bank select
             document.getElementById('bankSelect')?.addEventListener('change', function() {
                 const val = this.value;
                 if (val && banks[val]) {
-                    document.getElementById('interestRate').value = banks[val].rate;
-                    document.getElementById('rateSlider').value = banks[val].rate;
-                    const newParams = new URLSearchParams(window.location.search);
-                    newParams.set('bank', val);
-                    window.history.replaceState({}, '', '?' + newParams.toString());
+                    window.location.href = '/emi-calculator/bank/' + val + '/';
                 }
-                updatePage();
             });
 
-            // Car model select
             document.getElementById('carModelSelect')?.addEventListener('change', function() {
                 const val = this.value;
                 if (val && carModels[val]) {
-                    document.getElementById('carPrice').value = carModels[val].price;
-                    const newParams = new URLSearchParams(window.location.search);
-                    newParams.set('calculator', 'car');
-                    newParams.set('car', val);
-                    window.history.replaceState({}, '', '?' + newParams.toString());
+                    window.location.href = '/car-loan/' + val + '/';
                 }
-                updatePage();
             });
 
-            // Calculator type toggle
             document.querySelectorAll('.calc-type-btn').forEach(btn => {
                 btn.addEventListener('click', function() {
                     const type = this.dataset.type;
-                    const newParams = new URLSearchParams(window.location.search);
-                    newParams.set('calculator', type);
-                    if (type === 'emi') newParams.delete('calculator');
-                    window.history.replaceState({}, '', '?' + newParams.toString());
-                    updatePage();
+                    if (type === 'emi') {
+                        window.location.href = '/emi-calculator/bank/sbi/';
+                    } else if (type === 'sip') {
+                        window.location.href = '/sip-calculator/';
+                    }
                 });
             });
 
-            // SIP inputs
             ['sipAmount', 'sipRate', 'sipYears'].forEach(id => {
                 const el = document.getElementById(id);
                 const slider = document.getElementById(id + 'Slider');
@@ -1570,68 +1496,44 @@
                 }
             });
 
-            // Car inputs
             ['carPrice', 'carDownPayment', 'carRate', 'carTenure'].forEach(id => {
                 document.getElementById(id)?.addEventListener('input', updatePage);
             });
 
-            // FAQ accordion
             document.querySelectorAll('.faq-question').forEach(q => {
                 q.addEventListener('click', () => q.parentElement.classList.toggle('open'));
             });
 
-            // Crypto address click to copy
             document.getElementById('cryptoAddress')?.addEventListener('click', copyCryptoAddress);
         }
 
-        // ============================================
-        // SITEMAP GENERATOR (console)
-        // ============================================
-        function generateSitemap() {
-            let urls = [];
-            // All banks
-            Object.keys(banks).forEach(b => urls.push(`https://lucovista.in/emi-calculator?bank=${b}`));
-            // Sample amounts (every ₹5L for sitemap efficiency, full 500 in actual sitemap)
-            for (let a = 500000; a <= 50000000; a += 500000) urls.push(`https://lucovista.in/emi-calculator?amount=${a}`);
-            // Cities
-            cities.forEach(c => urls.push(`https://lucovista.in/emi-calculator?city=${c.toLowerCase()}`));
-            // Cars
-            Object.keys(carModels).forEach(c => urls.push(`https://lucovista.in/emi-calculator?calculator=car&car=${c}`));
-            // SIP
-            urls.push('https://lucovista.in/emi-calculator?calculator=sip');
-            // Bank + City combos (sample)
-            Object.keys(banks).slice(0, 10).forEach(b => {
-                cities.slice(0, 5).forEach(c => urls.push(`https://lucovista.in/emi-calculator?bank=${b}&city=${c.toLowerCase()}`));
-            });
-
-            console.log(`📊 TOTAL PROGRAMMATIC URLs: ${urls.length}+ (expandable to 10,000+)`);
-            console.log('🔗 Sample URLs:', urls.slice(0, 20));
-            console.log('💡 In production: Generate XML sitemap with all 500+ amounts × 50+ banks × 20 cities = 50,000+ pages');
-            return urls;
+        // Check for static params from build script
+        if (window.STATIC_PARAMS) {
+            const newUrl = window.location.pathname + '?' + window.STATIC_PARAMS;
+            window.history.replaceState({}, '', newUrl);
         }
 
-       // ============================================
-       // ============================================
-                  // INITIALIZATION
-                  // ============================================
-
-                // Check for static params injected by build script
-        if (window.STATIC_PARAMS) {
-                          // Convert "bank=sbi&city=mumbai" to proper URL
-                           const newUrl = window.location.pathname + '?' + window.STATIC_PARAMS;
-                            window.history.replaceState({}, '', newUrl);
-}
-
+        // Initialize
         populateBankSelect();
         populateCarSelect();
         updatePage();
         setupListeners();
-        const sitemapUrls = generateSitemap();
 
-        console.log('✅ LucoVista initialized successfully!');
-        console.log('💰 To monetize: Replace ad placeholders with Adsterra codes');
-        console.log('💜 Crypto donation: Uniswap/Trust Wallet address ready');
-        console.log('📈 SEO: 50+ banks, 500+ amounts, 20+ cars, 20 cities = 1000+ indexable pages');
+        function generateSitemap() {
+            let urls = [];
+            Object.keys(banks).forEach(b => urls.push(`/emi-calculator/bank/${b}/`));
+            for (let a = 500000; a <= 50000000; a += 500000) urls.push(`/emi-calculator/amount/${a}/`);
+            cities.forEach(c => urls.push(`/emi-calculator/city/${c.toLowerCase()}/`));
+            Object.keys(carModels).forEach(c => urls.push(`/car-loan/${c}/`));
+            urls.push('/sip-calculator/');
+            return urls;
+        }
+
+        const sitemapUrls = generateSitemap();
+        console.log(`📊 LucoVista initialized — ${sitemapUrls.length} programmatic pages ready`);
+        console.log('✅ All navigation uses folder-based URLs');
+        console.log('💜 Crypto donation box active');
+        console.log('📢 Ad placements ready for Adsterra codes');
     </script>
 </body>
 </html>
