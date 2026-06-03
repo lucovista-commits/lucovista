@@ -1,0 +1,18 @@
+[build]
+  command = "node build.js"
+  publish = "dist"
+
+[[redirects]]
+  from = "/emi-calculator/*"
+  to = "/emi-calculator/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/sip-calculator/*"
+  to = "/sip-calculator/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/car-loan/*"
+  to = "/car-loan/index.html"
+  status = 200
